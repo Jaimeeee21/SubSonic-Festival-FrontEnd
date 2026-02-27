@@ -60,6 +60,7 @@ body {
     font-weight: bold;
     color: var(--light-text);
     text-decoration: none;
+    margin-left: -120px;
 }
 
 .logo-icon {
@@ -78,6 +79,8 @@ body {
     list-style: none;
     gap: 2rem;
     align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-link {
@@ -85,7 +88,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    position: relative;
+    position: middle;
 }
 
 .nav-link:hover {
@@ -125,6 +128,7 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 6px;
+    margin-left: auto;
 }
 
 .hamburger span {
