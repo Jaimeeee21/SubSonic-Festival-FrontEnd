@@ -15,11 +15,32 @@
                 <span class="logo-text">SUBSONIC</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#lineup" class="nav-link">Artistas</a></li>
-                <li class="nav-item"><a href="#info" class="nav-link">Información</a></li>
-                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
-                <li class="nav-item"><a href="#entradas" class="nav-link entradas-btn">Entradas</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#calendario" class="nav-link">Calendario</a>
+                    <div class="dropdown-menu">
+                        <a href="#calendario-agosto" class="dropdown-item">Agosto 2026</a>
+                        <a href="#calendario-pasado" class="dropdown-item">Ediciones Anteriores</a>
+                        <a href="#calendario-proximas" class="dropdown-item">Próximos Festivales</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#eventos" class="nav-link">Eventos</a>
+                    <div class="dropdown-menu">
+                        <a href="#eventos-principales" class="dropdown-item">Eventos Principales</a>
+                        <a href="#eventos-talleres" class="dropdown-item">Talleres</a>
+                        <a href="#eventos-afterparty" class="dropdown-item">After Parties</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#merch" class="nav-link merchandising-btn">Merch</a>
+                    <div class="dropdown-menu">
+                        <a href="#merch-ropa" class="dropdown-item">Ropa</a>
+                        <a href="#merch-accesorios" class="dropdown-item">Accesorios</a>
+                        <a href="#merch-edicion-limitada" class="dropdown-item">Edición Limitada</a>
+                    </div>
+                </li>
             </ul>
+            <a href="login.html" class="user-icon">👤</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -28,18 +49,74 @@
         </div>
     </nav>
 
-    <!-- Sección Hero -->
+    <!-- Sección Hero - Carrusel de Eventos -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1 class="hero-title">SUBSONIC FESTIVAL</h1>
-            <p class="hero-subtitle">La Experiencia de Sonido Más Próxima a la Perfección</p>
-            <p class="hero-date">15 - 17 de Agosto, 2026</p>
-            <button class="cta-button" onclick="scrollToSection('entradas')">Comprar Entradas Ahora</button>
-        </div>
-        <div class="hero-background">
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
+        <div class="events-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Evento 1 -->
+                    <div class="event-card">
+                        <div class="event-image">🎤</div>
+                        <div class="event-info">
+                            <h3>ELECTRONIC VIBES</h3>
+                            <p class="event-date">15 de Agosto - 22:00</p>
+                            <p class="event-description">La mejor música electrónica en vivo</p>
+                            <span class="event-tag">Electronic</span>
+                        </div>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="event-card">
+                        <div class="event-image">🎸</div>
+                        <div class="event-info">
+                            <h3>ROCK FESTIVAL</h3>
+                            <p class="event-date">15 de Agosto - 20:00</p>
+                            <p class="event-description">Rock e indie de los mejores artistas</p>
+                            <span class="event-tag">Rock</span>
+                        </div>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="event-card">
+                        <div class="event-image">🎧</div>
+                        <div class="event-info">
+                            <h3>SYNTHWAVE NIGHT</h3>
+                            <p class="event-date">16 de Agosto - 01:00</p>
+                            <p class="event-description">Sonidos retro futuristas del mejor nivel</p>
+                            <span class="event-tag">Synthwave</span>
+                        </div>
+                    </div>
+
+                    <!-- Evento 4 -->
+                    <div class="event-card">
+                        <div class="event-image">🎤</div>
+                        <div class="event-info">
+                            <h3>HIP-HOP BATTLE</h3>
+                            <p class="event-date">16 de Agosto - 23:00</p>
+                            <p class="event-description">Batalla de rap y hip-hop en vivo</p>
+                            <span class="event-tag">Hip-Hop</span>
+                        </div>
+                    </div>
+
+                    <!-- Evento 5 -->
+                    <div class="event-card">
+                        <div class="event-image">🎹</div>
+                        <div class="event-info">
+                            <h3>INDIE SHOWCASE</h3>
+                            <p class="event-date">17 de Agosto - 20:00</p>
+                            <p class="event-description">Artistas independientes en el escenario principal</p>
+                            <span class="event-tag">Indie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de navegación -->
+            <button class="carousel-btn carousel-btn-prev" onclick="moveCarousel(-1)">❮</button>
+            <button class="carousel-btn carousel-btn-next" onclick="moveCarousel(1)">❯</button>
+
+            <!-- Indicadores -->
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
@@ -241,9 +318,9 @@
                 <div class="footer-section">
                     <h4>Síguenos</h4>
                     <div class="social-links">
-                        <a href="#" class="social-icon">Facebook</a>
-                        <a href="#" class="social-icon">Instagram</a>
-                        <a href="#" class="social-icon">Twitter</a>
+                        <a href="#" class="social-icon" title="Facebook">f</a>
+                        <a href="#" class="social-icon" title="Instagram">📷</a>
+                        <a href="#" class="social-icon" title="Twitter">𝕏</a>
                     </div>
                 </div>
             </div>

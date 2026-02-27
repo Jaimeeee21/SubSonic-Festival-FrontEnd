@@ -15,6 +15,60 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// ========== Carrusel de Eventos =========
+let currentSlide = 0;
+const carouselTrack = document.getElementById('carouselTrack');
+const eventCards = document.querySelectorAll('.event-card');
+const carouselDots = document.getElementById('carouselDots');
+
+// Crear indicadores de puntos
+if (eventCards.length > 0) {
+    eventCards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        carouselDots.appendChild(dot);
+    });
+}
+
+function moveCarousel(direction) {
+    currentSlide += direction;
+    
+    if (currentSlide >= eventCards.length) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = eventCards.length - 1;
+    }
+    
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const cardWidth = 320 + 32; // ancho tarjeta + gap
+    const offset = currentSlide * cardWidth;
+    carouselTrack.style.transform = `translateX(-${offset}px)`;
+    
+    // Actualizar puntos
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        if (index === currentSlide) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+// Auto-avanzar el carrusel cada 5 segundos
+setInterval(() => {
+    moveCarousel(1);
+}, 5000);
+
 // ========== Scroll suave y función para scroll =========
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -298,6 +352,17 @@ function initializeChat() {
 
 // Inicializar chat
 const chatService = initializeChat();
+
+// ========== Toggle entre Login y Registro =========
+function toggleForms() {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    
+    if (loginForm && registerForm) {
+        loginForm.classList.toggle('hidden');
+        registerForm.classList.toggle('hidden');
+    }
+}
 
 // ========== Manejo de errores global =========
 window.addEventListener('error', (e) => {
