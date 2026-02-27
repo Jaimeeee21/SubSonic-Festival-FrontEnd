@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBSONIC Festival - Experiencia de Sonido Única</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#lineup" class="nav-link">Artistas</a></li>
+                <li class="nav-item"><a href="#info" class="nav-link">Información</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="#entradas" class="nav-link entradas-btn">Entradas</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">SUBSONIC FESTIVAL</h1>
+            <p class="hero-subtitle">La Experiencia de Sonido Más Próxima a la Perfección</p>
+            <p class="hero-date">15 - 17 de Agosto, 2026</p>
+            <button class="cta-button" onclick="scrollToSection('entradas')">Comprar Entradas Ahora</button>
+        </div>
+        <div class="hero-background">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Lineup -->
+    <section class="lineup" id="lineup">
+        <div class="container">
+            <h2>Lineup 2026</h2>
+            <p class="section-subtitle">Artistas Internacionales de Talla Mundial</p>
+            
+            <div class="artists-grid">
+                <div class="artist-card" data-genre="Electronic">
+                    <div class="artist-image">🎙️</div>
+                    <h3>The Sonic Masters</h3>
+                    <p class="genre">Electronic / Techno</p>
+                    <p class="date">Viernes 15 - 22:00</p>
+                </div>
+
+                <div class="artist-card" data-genre="Rock">
+                    <div class="artist-image">🎸</div>
+                    <h3>Electric Horizon</h3>
+                    <p class="genre">Rock/Indie</p>
+                    <p class="date">Viernes 15 - 20:00</p>
+                </div>
+
+                <div class="artist-card" data-genre="Hip-Hop">
+                    <div class="artist-image">🎤</div>
+                    <h3>Rhythm & Beats</h3>
+                    <p class="genre">Hip-Hop / Rap</p>
+                    <p class="date">Sábado 16 - 23:00</p>
+                </div>
+
+                <div class="artist-card" data-genre="Electronic">
+                    <div class="artist-image">🎧</div>
+                    <h3>Neon Pulse</h3>
+                    <p class="genre">Synthwave / Electro</p>
+                    <p class="date">Sábado 16 - 01:00</p>
+                </div>
+
+                <div class="artist-card" data-genre="Indie">
+                    <div class="artist-image">🎹</div>
+                    <h3>Melodic Echoes</h3>
+                    <p class="genre">Indie / Alternative</p>
+                    <p class="date">Domingo 17 - 20:00</p>
+                </div>
+
+                <div class="artist-card" data-genre="House">
+                    <div class="artist-image">🎶</div>
+                    <h3>Deep Groove Collective</h3>
+                    <p class="genre">House / Funk</p>
+                    <p class="date">Domingo 17 - 23:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Información -->
+    <section class="info" id="info">
+        <div class="container">
+            <h2>Festival Info</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Ubicación</h3>
+                    <p>Parque Central de la Ciudad</p>
+                    <p class="small-text">Acceso fácil por transporte público</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🎫</div>
+                    <h3>Abonos Disponibles</h3>
+                    <p>Un Día: $45</p>
+                    <p>Pase Completo: $110</p>
+                    <p class="small-text">VIP disponible</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🏕️</div>
+                    <h3>Camping</h3>
+                    <p>Zonas de acampada</p>
+                    <p class="small-text">Baños y duchas 24/7</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🍽️</div>
+                    <h3>Gastronomía</h3>
+                    <p>Variedad de food trucks</p>
+                    <p class="small-text">Opciones vegetarianas incluidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Entradas -->
+    <section class="tickets" id="entradas">
+        <div class="container">
+            <h2>Consigue tus Entradas</h2>
+            <p class="section-subtitle">Variedad de opciones para disfrutar del mejor festival</p>
+            
+            <div class="tickets-grid">
+                <div class="ticket-card">
+                    <h3>Un Día</h3>
+                    <p class="price">$45</p>
+                    <ul class="ticket-features">
+                        <li>✓ Acceso a un día</li>
+                        <li>✓ Entrada general</li>
+                        <li>✓ Programa de artistas</li>
+                    </ul>
+                    <button class="ticket-button">Seleccionar Día</button>
+                </div>
+
+                <div class="ticket-card featured">
+                    <span class="badge">Más Popular</span>
+                    <h3>Pase Completo</h3>
+                    <p class="price">$110</p>
+                    <ul class="ticket-features">
+                        <li>✓ 3 días de festival</li>
+                        <li>✓ Acceso a todos los escenarios</li>
+                        <li>✓ Descuento en food</li>
+                        <li>✓ Programa VIP</li>
+                    </ul>
+                    <button class="ticket-button featured-button">Comprar Ahora</button>
+                </div>
+
+                <div class="ticket-card">
+                    <h3>VIP Premium</h3>
+                    <p class="price">$200</p>
+                    <ul class="ticket-features">
+                        <li>✓ Acceso VIP areas</li>
+                        <li>✓ Meet & Greet artistas</li>
+                        <li>✓ Catering incluido</li>
+                        <li>✓ Parking prioritario</li>
+                    </ul>
+                    <button class="ticket-button">Seleccionar Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2>Contactanos</h2>
+            <p class="section-subtitle">¿Preguntas? Estamos aquí para ayudarte</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@subsonicfestival.com">info@subsonicfestival.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Parque Central, Ciudad Principal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Email" required>
+                    <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SUBSONIC Festival</h4>
+                    <p>La mejor experiencia musical del año</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#lineup">Lineup</a></li>
+                        <li><a href="#info">Información</a></li>
+                        <li><a href="#entradas">Entradas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SUBSONIC Festival. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
