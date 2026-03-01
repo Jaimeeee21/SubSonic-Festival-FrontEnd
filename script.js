@@ -50,9 +50,8 @@ function goToSlide(index) {
 }
 
 function updateCarousel() {
-    const cardWidth = 320 + 32; // ancho tarjeta + gap
-    const offset = currentSlide * cardWidth;
-    carouselTrack.style.transform = `translateX(-${offset}px)`;
+    const offsetPercentage = currentSlide * 100;
+    carouselTrack.style.transform = `translateX(-${offsetPercentage}%)`;
     
     // Actualizar puntos
     document.querySelectorAll('.dot').forEach((dot, index) => {
@@ -86,6 +85,9 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
     }
 });
+
+// ========== Botón Flotante de Contacto =========
+// El botón ahora es un link que lleva a faq.html
 
 // ========== Validación del Formulario de Contacto =========
 const contactForm = document.getElementById('contactForm');
@@ -371,6 +373,29 @@ window.addEventListener('error', (e) => {
 
 window.addEventListener('unhandledrejection', (e) => {
     console.error('Promesa rechazada no capturada:', e.reason);
+});
+
+// ========== Accordion de FAQ =========
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        if (question) {
+            question.addEventListener('click', () => {
+                // Cerrar otros items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle el item actual
+                item.classList.toggle('active');
+            });
+        }
+    });
 });
 
 console.log('✨ SUBSONIC Festival - Todos los scripts cargados correctamente');

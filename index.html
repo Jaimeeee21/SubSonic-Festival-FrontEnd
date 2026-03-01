@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUBSONIC Festival - Experiencia de Sonido Única</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navegación -->
@@ -56,9 +57,9 @@
                 <div class="carousel-track" id="carouselTrack">
                     <!-- Evento 1 -->
                     <div class="event-card">
-                        <div class="event-image">🎤</div>
-                        <div class="event-info">
-                            <h3>ELECTRONIC VIBES</h3>
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>ELECTRONIC VIBES</h2>
                             <p class="event-date">15 de Agosto - 22:00</p>
                             <p class="event-description">La mejor música electrónica en vivo</p>
                             <span class="event-tag">Electronic</span>
@@ -67,9 +68,9 @@
 
                     <!-- Evento 2 -->
                     <div class="event-card">
-                        <div class="event-image">🎸</div>
-                        <div class="event-info">
-                            <h3>ROCK FESTIVAL</h3>
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>ROCK FESTIVAL</h2>
                             <p class="event-date">15 de Agosto - 20:00</p>
                             <p class="event-description">Rock e indie de los mejores artistas</p>
                             <span class="event-tag">Rock</span>
@@ -78,9 +79,9 @@
 
                     <!-- Evento 3 -->
                     <div class="event-card">
-                        <div class="event-image">🎧</div>
-                        <div class="event-info">
-                            <h3>SYNTHWAVE NIGHT</h3>
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>SYNTHWAVE NIGHT</h2>
                             <p class="event-date">16 de Agosto - 01:00</p>
                             <p class="event-description">Sonidos retro futuristas del mejor nivel</p>
                             <span class="event-tag">Synthwave</span>
@@ -89,9 +90,9 @@
 
                     <!-- Evento 4 -->
                     <div class="event-card">
-                        <div class="event-image">🎤</div>
-                        <div class="event-info">
-                            <h3>HIP-HOP BATTLE</h3>
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>HIP-HOP BATTLE</h2>
                             <p class="event-date">16 de Agosto - 23:00</p>
                             <p class="event-description">Batalla de rap y hip-hop en vivo</p>
                             <span class="event-tag">Hip-Hop</span>
@@ -100,12 +101,23 @@
 
                     <!-- Evento 5 -->
                     <div class="event-card">
-                        <div class="event-image">🎹</div>
-                        <div class="event-info">
-                            <h3>INDIE SHOWCASE</h3>
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1488382938155-d0e150232511?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>INDIE SHOWCASE</h2>
                             <p class="event-date">17 de Agosto - 20:00</p>
                             <p class="event-description">Artistas independientes en el escenario principal</p>
                             <span class="event-tag">Indie</span>
+                        </div>
+                    </div>
+
+                    <!-- Evento 6 -->
+                    <div class="event-card">
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1491927750519-3cf28b76b6f5?w=1200&h=600&fit=crop');"></div>
+                        <div class="event-overlay">
+                            <h2>JAZZ SESSIONS</h2>
+                            <p class="event-date">17 de Agosto - 22:00</p>
+                            <p class="event-description">Música jazz en vivo bajo las estrellas</p>
+                            <span class="event-tag">Jazz</span>
                         </div>
                     </div>
                 </div>
@@ -256,48 +268,8 @@
         </div>
     </section>
 
-    <!-- Sección de Contacto -->
-    <section class="contacto" id="contacto">
-        <div class="container">
-            <h2>Contactanos</h2>
-            <p class="section-subtitle">¿Preguntas? Estamos aquí para ayudarte</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@subsonicfestival.com">info@subsonicfestival.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="contact-icon">📱</span>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <h4>Dirección</h4>
-                            <p>Parque Central, Ciudad Principal</p>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Tu Nombre" required>
-                    <input type="email" placeholder="Tu Email" required>
-                    <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
-                    <button type="submit" class="submit-button">Enviar Mensaje</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <!-- Botón Flotante de Contacto -->
+    <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
 
     <!-- Footer -->
     <footer class="footer">
@@ -318,9 +290,9 @@
                 <div class="footer-section">
                     <h4>Síguenos</h4>
                     <div class="social-links">
-                        <a href="#" class="social-icon" title="Facebook">f</a>
-                        <a href="#" class="social-icon" title="Instagram">📷</a>
-                        <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="X"><span class="social-icon-x-wrapper"><svg class="social-icon-x" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.913 6.75h-3.308l7.73-8.835L.424 2.25h6.76l4.673 6.169L17.671 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span></a>
                     </div>
                 </div>
             </div>
