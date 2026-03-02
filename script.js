@@ -379,6 +379,28 @@ window.addEventListener('unhandledrejection', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
     
+    // ========== FAQ Categories =========
+    const categoryButtons = document.querySelectorAll('.faq-category-btn');
+    const faqContainers = document.querySelectorAll('.faq-container');
+    
+    categoryButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.getAttribute('data-category');
+            
+            // Remover clase active de todos los botones
+            categoryButtons.forEach(b => b.classList.remove('active'));
+            
+            // Remover clase active de todos los containers
+            faqContainers.forEach(container => container.classList.remove('active'));
+            
+            // Agregar clase active al botón clickeado
+            btn.classList.add('active');
+            
+            // Agregar clase active al container correspondiente
+            document.getElementById(category + '-faq').classList.add('active');
+        });
+    });
+    
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         

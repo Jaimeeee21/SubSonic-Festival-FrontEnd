@@ -41,12 +41,17 @@
                     </div>
                 </li>
             </ul>
-            <a href="login.html" class="user-icon">👤</a>
+            <div class="nav-right">
+                <button id="cartBtn" class="cart-btn" onclick="window.location.href='cart.html'">
+                    🛒 <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <a href="login.html" class="user-icon">👤</a>
         </div>
     </nav>
 
@@ -60,61 +65,57 @@
             <div class="merch-content" id="ropa">
                 <h2 class="merch-category">Ropa Oficial</h2>
                 <div class="merch-grid">
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="1" onclick="window.location.href='product-detail.html?id=1'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Camiseta SUBSONIC Classic</h3>
                             <p class="merch-desc">Tela de 100% algodón con logo bordado</p>
                             <div class="merch-colors">
-                                <span class="color" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" style="background-color: #ffffff; border: 1px solid #ccc;" title="Blanco"></span>
-                                <span class="color" style="background-color: #00d4ff;" title="Azul Neon"></span>
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Blanco" style="background-color: #ffffff; border: 1px solid #ccc;" title="Blanco"></span>
+                                <span class="color" data-color="Azul Neon" style="background-color: #00d4ff;" title="Azul Neon"></span>
                             </div>
                             <p class="merch-price">$29.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="2" onclick="window.location.href='product-detail.html?id=2'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1583062547461-25f0547b0ebb?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Hoodie SUBSONIC</h3>
                             <p class="merch-desc">Sudadera premium con capucha ajustable</p>
                             <div class="merch-colors">
-                                <span class="color" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" style="background-color: #1a1a3e;" title="Gris Oscuro"></span>
-                                <span class="color" style="background-color: #8338ec;" title="Púrpura"></span>
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Gris Oscuro" style="background-color: #1a1a3e;" title="Gris Oscuro"></span>
+                                <span class="color" data-color="Púrpura" style="background-color: #8338ec;" title="Púrpura"></span>
                             </div>
                             <p class="merch-price">$49.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="3" onclick="window.location.href='product-detail.html?id=3'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1506440773649-6e0eb8cfb237?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Pantalones SUBSONIC Jogger</h3>
                             <p class="merch-desc">Comodidad total con diseño moderno</p>
                             <div class="merch-colors">
-                                <span class="color" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" style="background-color: #1a1a3e;" title="Gris"></span>
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Gris" style="background-color: #1a1a3e;" title="Gris"></span>
                             </div>
                             <p class="merch-price">$39.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="4" onclick="window.location.href='product-detail.html?id=4'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1599062866797-69f535f84ac4?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Chaqueta Bomber SUBSONIC</h3>
                             <p class="merch-desc">Estilo urbano con detalles bordados</p>
                             <div class="merch-colors">
-                                <span class="color" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" style="background-color: #ff006e;" title="Rosa"></span>
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Rosa" style="background-color: #ff006e;" title="Rosa"></span>
                             </div>
                             <p class="merch-price">$69.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -124,43 +125,55 @@
             <div class="merch-content" id="accesorios">
                 <h2 class="merch-category">Accesorios</h2>
                 <div class="merch-grid">
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="5" onclick="window.location.href='product-detail.html?id=5'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Gorra SUBSONIC Trucker</h3>
                             <p class="merch-desc">Gorra ajustable con malla trasera</p>
+                            <div class="merch-colors">
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Azul" style="background-color: #00d4ff;" title="Azul"></span>
+                            </div>
                             <p class="merch-price">$19.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="6" onclick="window.location.href='product-detail.html?id=6'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1519052537793-e21cdc6db5e0?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Mochila SUBSONIC Urban</h3>
                             <p class="merch-desc">Compartimentos múltiples y resistente</p>
+                            <div class="merch-colors">
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Gris" style="background-color: #666666;" title="Gris"></span>
+                            </div>
                             <p class="merch-price">$44.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="7" onclick="window.location.href='product-detail.html?id=7'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Botella SUBSONIC Hydro</h3>
                             <p class="merch-desc">Térmica deportiva con logo grabado</p>
+                            <div class="merch-colors">
+                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
+                                <span class="color" data-color="Plateado" style="background-color: #c0c0c0;" title="Plateado"></span>
+                            </div>
                             <p class="merch-price">$24.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card">
+                    <div class="merch-card" data-product-id="8" onclick="window.location.href='product-detail.html?id=8'" style="cursor: pointer;">
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
                             <h3>Pulsera SUBSONIC LED</h3>
                             <p class="merch-desc">Pulsera LED interactiva para festivales</p>
+                            <div class="merch-colors">
+                                <span class="color" data-color="Azul Neon" style="background-color: #00d4ff;" title="Azul Neon"></span>
+                                <span class="color" data-color="Rosa Neon" style="background-color: #ff006e;" title="Rosa Neon"></span>
+                            </div>
                             <p class="merch-price">$14.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +184,7 @@
                 <h2 class="merch-category">Edición Limitada</h2>
                 <p class="limited-notice">⚡ Solo disponible en cantidad limitada - Recuerda tus momentos SUBSONIC</p>
                 <div class="merch-grid">
-                    <div class="merch-card premium">
+                    <div class="merch-card premium" data-product-id="9" onclick="window.location.href='product-detail.html?id=9'" style="cursor: pointer;">
                         <div class="limited-badge">LIMITADA</div>
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1608608738657-87d341fbdae0?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
@@ -179,11 +192,10 @@
                             <p class="merch-desc">Vinilo de edición limitada numerado con carátula de lujo</p>
                             <p class="merch-limited">Solo quedan: <strong>15 unidades</strong></p>
                             <p class="merch-price">$59.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card premium">
+                    <div class="merch-card premium" data-product-id="10" onclick="window.location.href='product-detail.html?id=10'" style="cursor: pointer;">
                         <div class="limited-badge">LIMITADA</div>
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1563789810-1cebcb186d60?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
@@ -191,11 +203,10 @@
                             <p class="merch-desc">Pase de coleccionista metalizado con cadena incluida</p>
                             <p class="merch-limited">Solo quedan: <strong>8 unidades</strong></p>
                             <p class="merch-price">$34.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
 
-                    <div class="merch-card premium">
+                    <div class="merch-card premium" data-product-id="11" onclick="window.location.href='product-detail.html?id=11'" style="cursor: pointer;">
                         <div class="limited-badge">LIMITADA</div>
                         <div class="merch-image" style="background-image: url('https://images.unsplash.com/photo-1599643478029-c961666e113e?w=300&h=400&fit=crop');"></div>
                         <div class="merch-body">
@@ -203,7 +214,6 @@
                             <p class="merch-desc">Colección premium con camiseta, vinilo y accesorios exclusivos</p>
                             <p class="merch-limited">Solo quedan: <strong>5 unidades</strong></p>
                             <p class="merch-price">$129.99</p>
-                            <button class="btn-primary small">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
@@ -211,6 +221,88 @@
         </div>
     </section>
 
+    <!-- Botón Flotante de Contacto -->
+    <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
+
     <script src="script.js"></script>
+    <script>
+        // Datos de productos con imágenes por color
+        const productColors = {
+            1: { // Camiseta
+                Negro: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop",
+                Blanco: "https://images.unsplash.com/photo-1595777712802-5d1e6c1c7e27?w=300&h=400&fit=crop",
+                "Azul Neon": "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=300&h=400&fit=crop"
+            },
+            2: { // Hoodie
+                Negro: "https://images.unsplash.com/photo-1583062547461-25f0547b0ebb?w=300&h=400&fit=crop",
+                "Gris Oscuro": "https://images.unsplash.com/photo-1556821552-9f41b9d9d628?w=300&h=400&fit=crop",
+                Púrpura: "https://images.unsplash.com/photo-1543163521-9efcc06b9ebb?w=300&h=400&fit=crop"
+            },
+            3: { // Pantalones
+                Negro: "https://images.unsplash.com/photo-1506440773649-6e0eb8cfb237?w=300&h=400&fit=crop",
+                Gris: "https://images.unsplash.com/photo-1473127895723-a97c89f8254c?w=300&h=400&fit=crop"
+            },
+            4: { // Chaqueta Bomber
+                Negro: "https://images.unsplash.com/photo-1599062866797-69f535f84ac4?w=300&h=400&fit=crop",
+                Rosa: "https://images.unsplash.com/photo-1607163337823-54e8b70a4f20?w=300&h=400&fit=crop"
+            },
+            5: { // Gorra
+                Negro: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=400&fit=crop",
+                Azul: "https://images.unsplash.com/photo-1611687930945-22f36e5edccb?w=300&h=400&fit=crop"
+            },
+            6: { // Mochila
+                Negro: "https://images.unsplash.com/photo-1519052537793-e21cdc6db5e0?w=300&h=400&fit=crop",
+                Gris: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=400&fit=crop"
+            },
+            7: { // Botella
+                Negro: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=400&fit=crop",
+                Plateado: "https://images.unsplash.com/photo-1602920917128-1aa500764cbd?w=300&h=400&fit=crop"
+            },
+            8: { // Pulsera LED
+                "Azul Neon": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=400&fit=crop",
+                "Rosa Neon": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&h=400&fit=crop"
+            },
+            9: { // Vinilo
+                Negro: "https://images.unsplash.com/photo-1608608738657-87d341fbdae0?w=300&h=400&fit=crop"
+            },
+            10: { // Pase VIP
+                Plateado: "https://images.unsplash.com/photo-1563789810-1cebcb186d60?w=300&h=400&fit=crop"
+            },
+            11: { // Box Set
+                Negro: "https://images.unsplash.com/photo-1599643478029-c961666e113e?w=300&h=400&fit=crop"
+            }
+        };
+
+        // Agregar event listeners a los color spans
+        document.querySelectorAll('.color').forEach(colorSpan => {
+            colorSpan.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evitar que navegue al hacer click en color
+                
+                const productCard = colorSpan.closest('.merch-card');
+                const productId = productCard.dataset.productId;
+                const colorName = colorSpan.dataset.color;
+                const merchImage = productCard.querySelector('.merch-image');
+                
+                if (productColors[productId] && productColors[productId][colorName]) {
+                    merchImage.style.backgroundImage = `url('${productColors[productId][colorName]}')`;
+                }
+            });
+        });
+
+        // Funciones del carrito
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        // Actualizar contador cuando se carga la página
+        updateCartCount();
+
+        // Escuchar cambios en el storage (cuando se agrega desde product-detail.html)
+        window.addEventListener('storage', updateCartCount);
+
+        // También verificar cada segundo por si el storage cambió (en la misma ventana)
+        setInterval(updateCartCount, 500);
+    </script>
 </body>
 </html>

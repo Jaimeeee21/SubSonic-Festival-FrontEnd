@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - SUBSONIC Festival</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="calendario.html" class="nav-link">Calendario</a>
+                    <div class="dropdown-menu">
+                        <a href="calendario.html#agosto" class="dropdown-item">Agosto 2026</a>
+                        <a href="calendario.html#pasado" class="dropdown-item">Ediciones Anteriores</a>
+                        <a href="calendario.html#proximas" class="dropdown-item">Próximos Festivales</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="eventos.html" class="nav-link">Eventos</a>
+                    <div class="dropdown-menu">
+                        <a href="eventos.html#principales" class="dropdown-item">Eventos Principales</a>
+                        <a href="eventos.html#talleres" class="dropdown-item">Talleres</a>
+                        <a href="eventos.html#afterparty" class="dropdown-item">After Parties</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="merch.html" class="nav-link merchandising-btn">Merch</a>
+                    <div class="dropdown-menu">
+                        <a href="merch.html#ropa" class="dropdown-item">Ropa</a>
+                        <a href="merch.html#accesorios" class="dropdown-item">Accesorios</a>
+                        <a href="merch.html#edicion-limitada" class="dropdown-item">Edición Limitada</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <button id="cartBtn" class="cart-btn" onclick="window.location.href='cart.html'">
+                    🛒 <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="login.html" class="user-icon">👤</a>
+        </div>
+    </nav>
+
+    <!-- Sección de Detalle de Producto -->
+    <section class="product-detail-section">
+        <div class="container">
+            <a href="merch.html" class="back-link">← Volver a Merch</a>
+            
+            <div class="product-detail-wrapper">
+                <!-- Imagen del Producto -->
+                <div class="product-image-container">
+                    <img id="productImage" src="" alt="Producto" class="product-image-main">
+                    <div class="product-colors-preview">
+                        <p>Selecciona un color:</p>
+                        <div id="colorOptions" class="color-options">
+                            <!-- Se genera dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información del Producto -->
+                <div class="product-info">
+                    <h1 id="productName"></h1>
+                    <p id="productDesc" class="product-description"></p>
+                    <p id="productPrice" class="product-price"></p>
+
+                    <!-- Selección de Color -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div id="colorSelector" class="color-selector">
+                                <!-- Se genera dinámicamente -->
+                            </div>
+                        </div>
+
+                        <!-- Selección de Talla (solo para ropa) -->
+                        <div id="sizeGroup" class="option-group" style="display: none;">
+                            <label>Talla:</label>
+                            <select id="sizeSelector" class="size-selector">
+                                <option value="">Selecciona una talla</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                            <div id="sizeError" class="error-message" style="display: none;">
+                                Por favor selecciona una talla
+                            </div>
+                        </div>
+
+                        <!-- Cantidad -->
+                        <div class="option-group">
+                            <label>Cantidad:</label>
+                            <div class="quantity-selector">
+                                <button id="decreaseQty" class="qty-btn">-</button>
+                                <input id="quantity" type="number" value="1" min="1" max="10">
+                                <button id="increaseQty" class="qty-btn">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón Agregar al Carrito -->
+                    <button id="addToCartBtn" class="btn-primary large">Agregar al Carrito</button>
+                    
+                    <!-- Mensaje de confirmación -->
+                    <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+                        ✓ Producto agregado al carrito
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón Flotante de Contacto -->
+    <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
+
+    <script src="script.js"></script>
+    <script>
+        // Datos de productos
+        const products = {
+            1: {
+                name: "Camiseta SUBSONIC Classic",
+                description: "Tela de 100% algodón con logo bordado",
+                price: "$29.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop" },
+                    { name: "Blanco", hex: "#ffffff", image: "https://images.unsplash.com/photo-1595777712802-5d1e6c1c7e27?w=600&h=800&fit=crop" },
+                    { name: "Azul Neon", hex: "#00d4ff", image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&h=800&fit=crop" }
+                ],
+                hasSize: true
+            },
+            2: {
+                name: "Hoodie SUBSONIC",
+                description: "Sudadera premium con capucha ajustable",
+                price: "$49.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1583062547461-25f0547b0ebb?w=600&h=800&fit=crop" },
+                    { name: "Gris Oscuro", hex: "#1a1a3e", image: "https://images.unsplash.com/photo-1556821552-9f41b9d9d628?w=600&h=800&fit=crop" },
+                    { name: "Púrpura", hex: "#8338ec", image: "https://images.unsplash.com/photo-1543163521-9efcc06b9ebb?w=600&h=800&fit=crop" }
+                ],
+                hasSize: true
+            },
+            3: {
+                name: "Pantalones SUBSONIC Jogger",
+                description: "Comodidad total con diseño moderno",
+                price: "$39.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1506440773649-6e0eb8cfb237?w=600&h=800&fit=crop" },
+                    { name: "Gris", hex: "#1a1a3e", image: "https://images.unsplash.com/photo-1473127895723-a97c89f8254c?w=600&h=800&fit=crop" }
+                ],
+                hasSize: true
+            },
+            4: {
+                name: "Chaqueta Bomber SUBSONIC",
+                description: "Estilo urbano con detalles bordados",
+                price: "$69.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1599062866797-69f535f84ac4?w=600&h=800&fit=crop" },
+                    { name: "Rosa", hex: "#ff006e", image: "https://images.unsplash.com/photo-1607163337823-54e8b70a4f20?w=600&h=800&fit=crop" }
+                ],
+                hasSize: true
+            },
+            5: {
+                name: "Gorra SUBSONIC Trucker",
+                description: "Gorra ajustable con malla trasera",
+                price: "$19.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=800&fit=crop" },
+                    { name: "Azul", hex: "#00d4ff", image: "https://images.unsplash.com/photo-1611687930945-22f36e5edccb?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            6: {
+                name: "Mochila SUBSONIC Urban",
+                description: "Compartimentos múltiples y resistente",
+                price: "$44.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1519052537793-e21cdc6db5e0?w=600&h=800&fit=crop" },
+                    { name: "Gris", hex: "#666666", image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            7: {
+                name: "Botella SUBSONIC Hydro",
+                description: "Térmica deportiva con logo grabado",
+                price: "$24.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=800&fit=crop" },
+                    { name: "Plateado", hex: "#c0c0c0", image: "https://images.unsplash.com/photo-1602920917128-1aa500764cbd?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            8: {
+                name: "Pulsera SUBSONIC LED",
+                description: "Pulsera LED interactiva para festivales",
+                price: "$14.99",
+                colors: [
+                    { name: "Azul Neon", hex: "#00d4ff", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=800&fit=crop" },
+                    { name: "Rosa Neon", hex: "#ff006e", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            9: {
+                name: "Vinilo SUBSONIC 2026",
+                description: "Vinilo de edición limitada numerado con carátula de lujo",
+                price: "$59.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1608608738657-87d341fbdae0?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            10: {
+                name: "Pase VIP Metalizado",
+                description: "Pase de coleccionista metalizado con cadena incluida",
+                price: "$34.99",
+                colors: [
+                    { name: "Plateado", hex: "#c0c0c0", image: "https://images.unsplash.com/photo-1563789810-1cebcb186d60?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            },
+            11: {
+                name: "Edición Especial Box Set",
+                description: "Colección premium con camiseta, vinilo y accesorios exclusivos",
+                price: "$129.99",
+                colors: [
+                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1599643478029-c961666e113e?w=600&h=800&fit=crop" }
+                ],
+                hasSize: false
+            }
+        };
+
+        // Obtener ID del producto
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = products[productId];
+
+        if (product) {
+            // Cargar información del producto
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productDesc').textContent = product.description;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productImage').src = product.colors[0].image;
+
+            // Mostrar opciones de color
+            const colorSelector = document.getElementById('colorSelector');
+            const colorOptions = document.getElementById('colorOptions');
+            
+            product.colors.forEach((color, index) => {
+                const colorBtn = document.createElement('button');
+                colorBtn.className = 'color-btn' + (index === 0 ? ' active' : '');
+                colorBtn.style.backgroundColor = color.hex;
+                colorBtn.title = color.name;
+                colorBtn.onclick = () => {
+                    document.querySelectorAll('.color-btn').forEach(btn => btn.classList.remove('active'));
+                    colorBtn.classList.add('active');
+                    document.getElementById('productImage').src = color.image;
+                };
+                colorSelector.appendChild(colorBtn);
+
+                const colorPreview = document.createElement('div');
+                colorPreview.className = 'color-preview';
+                colorPreview.style.backgroundColor = color.hex;
+                colorPreview.innerHTML = `<span>${color.name}</span>`;
+                colorOptions.appendChild(colorPreview);
+            });
+
+            // Mostrar tallas solo para ropa
+            if (product.hasSize) {
+                document.getElementById('sizeGroup').style.display = 'block';
+            }
+
+            // Eventos para cantidad
+            document.getElementById('decreaseQty').addEventListener('click', () => {
+                const qty = document.getElementById('quantity');
+                if (qty.value > 1) qty.value--;
+            });
+
+            document.getElementById('increaseQty').addEventListener('click', () => {
+                const qty = document.getElementById('quantity');
+                if (qty.value < 10) qty.value++;
+            });
+
+            // Agregar al carrito
+            document.getElementById('addToCartBtn').addEventListener('click', () => {
+                const activeColorBtn = document.querySelector('.color-btn.active');
+                const color = activeColorBtn.title;
+                const selectedColor = product.colors.find(c => c.name === color);
+                const size = product.hasSize ? document.getElementById('sizeSelector').value : 'Única';
+                const quantity = document.getElementById('quantity').value;
+
+                if (product.hasSize && !size) {
+                    showSizeError();
+                    return;
+                }
+
+                // Guardar en localStorage - siempre como item separado si tiene diferentes talla o color
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    color: color,
+                    image: selectedColor.image,
+                    size: size,
+                    quantity: parseInt(quantity)
+                });
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Actualizar contador del carrito
+                updateCartCount();
+
+                // Mostrar confirmación
+                document.getElementById('addToCartBtn').style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
+
+                // Ocultar mensaje y resetear después de 2 segundos
+                setTimeout(() => {
+                    document.getElementById('addToCartBtn').style.display = 'block';
+                    document.getElementById('confirmationMessage').style.display = 'none';
+                    
+                    // Resetear cantidad a 1
+                    document.getElementById('quantity').value = 1;
+                }, 2000);
+            });
+
+            // Función para actualizar el contador del carrito
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                document.getElementById('cartCount').textContent = cart.length;
+            }
+
+            // Función para mostrar error de talla
+            function showSizeError() {
+                const sizeError = document.getElementById('sizeError');
+                sizeError.style.display = 'flex';
+                
+                // Desaparecer después de 3 segundos
+                setTimeout(() => {
+                    sizeError.style.display = 'none';
+                }, 3000);
+            }
+
+            // Cargar contador al abrir la página
+            updateCartCount();
+        } else {
+            document.body.innerHTML = '<h1 style="text-align: center; padding-top: 100px;">Producto no encontrado</h1>';
+        }
+    </script>
+</body>
+</html>
