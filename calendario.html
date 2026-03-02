@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - SUBSONIC Festival</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="calendario.html" class="nav-link">Calendario</a>
+                    <div class="dropdown-menu">
+                        <a href="calendario.html#agosto" class="dropdown-item">Agosto 2026</a>
+                        <a href="calendario.html#pasado" class="dropdown-item">Ediciones Anteriores</a>
+                        <a href="calendario.html#proximas" class="dropdown-item">Próximos Festivales</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="eventos.html" class="nav-link">Eventos</a>
+                    <div class="dropdown-menu">
+                        <a href="eventos.html#principales" class="dropdown-item">Eventos Principales</a>
+                        <a href="eventos.html#talleres" class="dropdown-item">Talleres</a>
+                        <a href="eventos.html#afterparty" class="dropdown-item">After Parties</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="merch.html" class="nav-link merchandising-btn">Merch</a>
+                    <div class="dropdown-menu">
+                        <a href="merch.html#ropa" class="dropdown-item">Ropa</a>
+                        <a href="merch.html#accesorios" class="dropdown-item">Accesorios</a>
+                        <a href="merch.html#edicion-limitada" class="dropdown-item">Edición Limitada</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="login.html" class="user-icon">👤</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Calendario -->
+    <section class="calendar-section">
+        <div class="container">
+            <h1>Calendario SUBSONIC 2026</h1>
+            <p class="section-subtitle">Gestiona tu agenda y no te pierdas ningún evento</p>
+
+            <!-- Agosto 2026 -->
+            <div class="calendar-content" id="agosto">
+                <h2 class="calendar-month">Agosto 2026</h2>
+                
+                <div class="events-timeline">
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">AGO</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>ELECTRONIC VIBES</h3>
+                            <p class="event-time">22:00 - 23:30</p>
+                            <p class="event-description">La mejor música electrónica en vivo con DJs internacionales</p>
+                            <span class="event-tag">Electronic</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">AGO</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>ROCK FESTIVAL</h3>
+                            <p class="event-time">20:00 - 21:00</p>
+                            <p class="event-description">Rock e indie de los mejores artistas latinoamericanos</p>
+                            <span class="event-tag">Rock</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">16</span>
+                            <span class="month">AGO</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>SYNTHWAVE NIGHT</h3>
+                            <p class="event-time">01:00 - 02:30</p>
+                            <p class="event-description">Sonidos retro futuristas del mejor nivel</p>
+                            <span class="event-tag">Synthwave</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">16</span>
+                            <span class="month">AGO</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>HIP-HOP BATTLE</h3>
+                            <p class="event-time">23:00 - 00:30</p>
+                            <p class="event-description">Batalla de rap y hip-hop en vivo</p>
+                            <span class="event-tag">Hip-Hop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ediciones Anteriores -->
+            <div class="calendar-content" id="pasado">
+                <h2 class="calendar-month">Ediciones Anteriores</h2>
+                <div class="events-timeline">
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">Ago</span>
+                            <span class="month">2025</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>SUBSONIC 2025</h3>
+                            <p class="event-description">Primera edición del festival con más de 50,000 asistentes</p>
+                            <a href="#" class="small-link">Ver fotos →</a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">Ago</span>
+                            <span class="month">2024</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>SUBSONIC 2024</h3>
+                            <p class="event-description">Festival piloto que inició la tradición SUBSONIC</p>
+                            <a href="#" class="small-link">Ver fotos →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Próximos Festivales -->
+            <div class="calendar-content" id="proximas">
+                <h2 class="calendar-month">Próximos Festivales</h2>
+                <div class="events-timeline">
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">Ago</span>
+                            <span class="month">2027</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>SUBSONIC 2027</h3>
+                            <p class="event-description">Próxima edición con más sorpresas y artistas internacionales</p>
+                            <button class="btn-primary small">Notificarme</button>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="event-date">
+                            <span class="day">Dic</span>
+                            <span class="month">2026</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>SUBSONIC WINTER 2026</h3>
+                            <p class="event-description">Edición especial de invierno con artistas emergentes</p>
+                            <button class="btn-primary small">Notificarme</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Empresas - SUBSONIC Festival</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenedor de Registro de Empresas -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Formulario de Registro de Empresas -->
+            <div class="auth-form" id="businessRegisterForm">
+                <h2>Registro de Empresas Colaboradoras</h2>
+                <p class="form-subtitle">¿Es tu empresa parte de SUBSONIC? Regístrate aquí</p>
+                
+                <form>
+                    <!-- Información de la Empresa -->
+                    <div class="form-section-title">Información de la Empresa</div>
+                    
+                    <div class="form-group">
+                        <label for="companyName">Nombre de la Empresa:</label>
+                        <input type="text" id="companyName" name="companyName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessType">Tipo de Negocio:</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="">Selecciona un tipo...</option>
+                            <option value="food-tracking">Food Tracking / Comida</option>
+                            <option value="beverages">Bebidas</option>
+                            <option value="merchandise">Merchandising</option>
+                            <option value="entertainment">Entretenimiento</option>
+                            <option value="hospitality">Hospedaje / Hotelería</option>
+                            <option value="transportation">Transporte</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companyEmail">Correo Electrónico de la Empresa:</label>
+                        <input type="email" id="companyEmail" name="companyEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono de Contacto:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="companyDescription">Descripción del Negocio:</label>
+                        <textarea id="companyDescription" name="description" placeholder="Cuéntanos brevemente sobre tu empresa..." rows="4" required></textarea>
+                    </div>
+
+                    <!-- Información del Representante -->
+                    <div class="form-section-title">Información del Representante</div>
+
+                    <div class="form-group">
+                        <label for="contactName">Nombre del Representante:</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPosition">Cargo/Posición:</label>
+                        <input type="text" id="contactPosition" name="position" required>
+                    </div>
+
+                    <!-- Credenciales -->
+                    <div class="form-section-title">Credenciales de Acceso</div>
+
+                    <div class="form-group">
+                        <label for="businessPassword">Contraseña:</label>
+                        <input type="password" id="businessPassword" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessPassword2">Confirmar Contraseña:</label>
+                        <input type="password" id="businessPassword2" name="password2" required>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Acepto los términos y condiciones para empresas colaboradoras</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Registrar Empresa</button>
+                </form>
+
+                <p class="toggle-auth">
+                    ¿Eres usuario individual? <a href="login.html" class="link-blue">Vuelve al login</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

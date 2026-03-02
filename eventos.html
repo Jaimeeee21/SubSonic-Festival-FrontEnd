@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - SUBSONIC Festival</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="calendario.html" class="nav-link">Calendario</a>
+                    <div class="dropdown-menu">
+                        <a href="calendario.html#agosto" class="dropdown-item">Agosto 2026</a>
+                        <a href="calendario.html#pasado" class="dropdown-item">Ediciones Anteriores</a>
+                        <a href="calendario.html#proximas" class="dropdown-item">Próximos Festivales</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="eventos.html" class="nav-link">Eventos</a>
+                    <div class="dropdown-menu">
+                        <a href="eventos.html#principales" class="dropdown-item">Eventos Principales</a>
+                        <a href="eventos.html#talleres" class="dropdown-item">Talleres</a>
+                        <a href="eventos.html#afterparty" class="dropdown-item">After Parties</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="merch.html" class="nav-link merchandising-btn">Merch</a>
+                    <div class="dropdown-menu">
+                        <a href="merch.html#ropa" class="dropdown-item">Ropa</a>
+                        <a href="merch.html#accesorios" class="dropdown-item">Accesorios</a>
+                        <a href="merch.html#edicion-limitada" class="dropdown-item">Edición Limitada</a>
+                    </div>
+                </li>
+            </ul>
+            <a href="login.html" class="user-icon">👤</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Eventos -->
+    <section class="events-section">
+        <div class="container">
+            <h1>Eventos SUBSONIC 2026</h1>
+            <p class="section-subtitle">Vive la experiencia musical más electrizante</p>
+
+            <!-- Eventos Principales -->
+            <div class="events-content" id="principales">
+                <h2 class="events-category">Eventos Principales</h2>
+                <div class="events-grid">
+                    <div class="event-card-detail">
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop');"></div>
+                        <div class="event-card-body">
+                            <h3>ELECTRONIC VIBES</h3>
+                            <p class="event-time">15 AGO | 22:00</p>
+                            <p class="event-desc">La mejor música electrónica en vivo con los mejores DJs internacionales. Una noche de sintetizadores, bajos profundos y energía sin fin.</p>
+                            <div class="event-info">
+                                <span class="info-item">📍 Escenario Principal</span>
+                                <span class="info-item">🎤 5+ DJs</span>
+                            </div>
+                            <button class="btn-primary small">Comprar Entrada</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card-detail">
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=300&fit=crop');"></div>
+                        <div class="event-card-body">
+                            <h3>ROCK FESTIVAL</h3>
+                            <p class="event-time">15 AGO | 20:00</p>
+                            <p class="event-desc">Rock e indie de los mejores artistas latinoamericanos. Guitarra, bajo y batería en su máxima expresión.</p>
+                            <div class="event-info">
+                                <span class="info-item">📍 Escenario Alternativo</span>
+                                <span class="info-item">🎸 8 Bandas</span>
+                            </div>
+                            <button class="btn-primary small">Comprar Entrada</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card-detail">
+                        <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400&h=300&fit=crop');"></div>
+                        <div class="event-card-body">
+                            <h3>SYNTHWAVE NIGHT</h3>
+                            <p class="event-time">16 AGO | 01:00</p>
+                            <p class="event-desc">Sonidos retro futuristas del mejor nivel. Un viaje a los 80s con producción moderna.</p>
+                            <div class="event-info">
+                                <span class="info-item">📍 Escenario Futurista</span>
+                                <span class="info-item">🌌 3 Artistas</span>
+                            </div>
+                            <button class="btn-primary small">Comprar Entrada</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Talleres -->
+            <div class="events-content" id="talleres">
+                <h2 class="events-category">Talleres y Masterclasses</h2>
+                <div class="events-grid">
+                    <div class="workshop-card">
+                        <h3>Taller de Producción Electrónica</h3>
+                        <p class="workshop-time">15 AGO | 14:00 - 17:00</p>
+                        <p class="workshop-desc">Aprende los fundamentos de la producción musical electrónica con profesionales de la industria.</p>
+                        <div class="workshop-meta">
+                            <span class="meta-item">👥 30 Lugares</span>
+                            <span class="meta-item">💰 $25</span>
+                        </div>
+                        <button class="btn-primary small">Registrarse</button>
+                    </div>
+
+                    <div class="workshop-card">
+                        <h3>Masterclass: Mezcla de Audio Profesional</h3>
+                        <p class="workshop-time">16 AGO | 10:00 - 13:00</p>
+                        <p class="workshop-desc">Técnicas avanzadas de mezcla de audio con sound engineers reconocidos internacionalmente.</p>
+                        <div class="workshop-meta">
+                            <span class="meta-item">👥 20 Lugares</span>
+                            <span class="meta-item">💰 $40</span>
+                        </div>
+                        <button class="btn-primary small">Registrarse</button>
+                    </div>
+
+                    <div class="workshop-card">
+                        <h3>Workshop: Beatmaking desde Cero</h3>
+                        <p class="workshop-time">16 AGO | 15:00 - 18:00</p>
+                        <p class="workshop-desc">Crea tu primer beat con herramientas modernas. No necesitas experiencia previa.</p>
+                        <div class="workshop-meta">
+                            <span class="meta-item">👥 40 Lugares</span>
+                            <span class="meta-item">💰 $20</span>
+                        </div>
+                        <button class="btn-primary small">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- After Parties -->
+            <div class="events-content" id="afterparty">
+                <h2 class="events-category">After Parties</h2>
+                <div class="events-grid">
+                    <div class="afterparty-card">
+                        <div class="afterparty-icon">🌙</div>
+                        <h3>Techno Underground</h3>
+                        <p class="afterparty-time">15 AGO | 23:00 en adelante</p>
+                        <p class="afterparty-desc">La experiencia techno más cruda y pura. Para los verdaderos amantes de la música electrónica.</p>
+                        <div class="afterparty-meta">
+                            <span class="meta-item">📍 Club Subsónico</span>
+                            <span class="meta-item">🎟️ Gratis con entrada</span>
+                        </div>
+                        <button class="btn-primary small">Detalles</button>
+                    </div>
+
+                    <div class="afterparty-card">
+                        <div class="afterparty-icon">🎶</div>
+                        <h3>Indie Rock Lounge</h3>
+                        <p class="afterparty-time">15 AGO | 22:00 en adelante</p>
+                        <p class="afterparty-desc">Espacio relajado para disfrutar indie, rock alternativo y conversación.</p>
+                        <div class="afterparty-meta">
+                            <span class="meta-item">📍 The Lounge</span>
+                            <span class="meta-item">🎟️ $15</span>
+                        </div>
+                        <button class="btn-primary small">Detalles</button>
+                    </div>
+
+                    <div class="afterparty-card">
+                        <div class="afterparty-icon">✨</div>
+                        <h3>Synth Retro Bar</h3>
+                        <p class="afterparty-time">16 AGO | 00:00 en adelante</p>
+                        <p class="afterparty-desc">Bar con temática synthwave. Cócteles, vibes retro y lo mejor de la música sintetizada.</p>
+                        <div class="afterparty-meta">
+                            <span class="meta-item">📍 Retro Vibes Club</span>
+                            <span class="meta-item">🎟️ Gratis con entrada</span>
+                        </div>
+                        <button class="btn-primary small">Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
