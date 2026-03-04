@@ -20,9 +20,15 @@ let currentSlide = 0;
 const carouselTrack = document.getElementById('carouselTrack');
 const eventCards = document.querySelectorAll('.event-card');
 const carouselDots = document.getElementById('carouselDots');
+const hasCarousel = carouselTrack && carouselDots && eventCards.length > 0;
+const carouselIntervalMs = 5000;
+const carouselProgressStepMs = 50;
+let carouselAutoplayTimeout = null;
+let carouselProgressInterval = null;
+let carouselElapsedMs = 0;
 
 // Crear indicadores de puntos
-if (eventCards.length > 0) {
+if (hasCarousel) {
     eventCards.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -32,7 +38,45 @@ if (eventCards.length > 0) {
     });
 }
 
+function resetDotsProgress() {
+    if (!hasCarousel) return;
+    carouselDots.querySelectorAll('.dot').forEach(dot => {
+        dot.style.setProperty('--progress', '0%');
+    });
+}
+
+function setActiveDotProgress(progressPercent) {
+    if (!hasCarousel) return;
+    const activeDot = carouselDots.querySelector('.dot.active');
+    if (activeDot) {
+        activeDot.style.setProperty('--progress', `${progressPercent}%`);
+    }
+}
+
+function restartCarouselAutoplay() {
+    if (!hasCarousel) return;
+
+    clearTimeout(carouselAutoplayTimeout);
+    clearInterval(carouselProgressInterval);
+
+    carouselElapsedMs = 0;
+    resetDotsProgress();
+    setActiveDotProgress(0);
+
+    carouselProgressInterval = setInterval(() => {
+        carouselElapsedMs += carouselProgressStepMs;
+        const progress = Math.min((carouselElapsedMs / carouselIntervalMs) * 100, 100);
+        setActiveDotProgress(progress);
+    }, carouselProgressStepMs);
+
+    carouselAutoplayTimeout = setTimeout(() => {
+        moveCarousel(1);
+    }, carouselIntervalMs);
+}
+
 function moveCarousel(direction) {
+    if (!hasCarousel) return;
+
     currentSlide += direction;
     
     if (currentSlide >= eventCards.length) {
@@ -42,19 +86,25 @@ function moveCarousel(direction) {
     }
     
     updateCarousel();
+    restartCarouselAutoplay();
 }
 
 function goToSlide(index) {
+    if (!hasCarousel) return;
+
     currentSlide = index;
     updateCarousel();
+    restartCarouselAutoplay();
 }
 
 function updateCarousel() {
+    if (!hasCarousel) return;
+
     const offsetPercentage = currentSlide * 100;
     carouselTrack.style.transform = `translateX(-${offsetPercentage}%)`;
     
     // Actualizar puntos
-    document.querySelectorAll('.dot').forEach((dot, index) => {
+    carouselDots.querySelectorAll('.dot').forEach((dot, index) => {
         if (index === currentSlide) {
             dot.classList.add('active');
         } else {
@@ -63,10 +113,10 @@ function updateCarousel() {
     });
 }
 
-// Auto-avanzar el carrusel cada 5 segundos
-setInterval(() => {
-    moveCarousel(1);
-}, 5000);
+if (hasCarousel) {
+    updateCarousel();
+    restartCarouselAutoplay();
+}
 
 // ========== Scroll suave y función para scroll =========
 function scrollToSection(sectionId) {
