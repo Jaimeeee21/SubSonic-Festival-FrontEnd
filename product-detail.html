@@ -78,15 +78,7 @@
                     <p id="productDesc" class="product-description"></p>
                     <p id="productPrice" class="product-price"></p>
 
-                    <!-- Selección de Color -->
                     <div class="product-options">
-                        <div class="option-group">
-                            <label>Color:</label>
-                            <div id="colorSelector" class="color-selector">
-                                <!-- Se genera dinámicamente -->
-                            </div>
-                        </div>
-
                         <!-- Selección de Talla (solo para ropa) -->
                         <div id="sizeGroup" class="option-group" style="display: none;">
                             <label>Talla:</label>
@@ -139,9 +131,9 @@
                 description: "Tela de 100% algodón con logo bordado",
                 price: "$29.99",
                 colors: [
-                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=800&fit=crop" },
-                    { name: "Blanco", hex: "#ffffff", image: "https://images.unsplash.com/photo-1595777712802-5d1e6c1c7e27?w=600&h=800&fit=crop" },
-                    { name: "Azul Neon", hex: "#00d4ff", image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?w=600&h=800&fit=crop" }
+                    { name: "Blanco", hex: "#ffffff", image: "images/camiseta-blanca-subsonic.png" },
+                    { name: "Negro", hex: "#0f0f1e", image: "images/camiseta-negra-subsonic.png" },
+                    { name: "Azul Neon", hex: "#00d4ff", image: "images/camiseta-azul-subsonic.png" }
                 ],
                 hasSize: true
             },
@@ -150,9 +142,9 @@
                 description: "Sudadera premium con capucha ajustable",
                 price: "$49.99",
                 colors: [
-                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1583062547461-25f0547b0ebb?w=600&h=800&fit=crop" },
-                    { name: "Gris Oscuro", hex: "#1a1a3e", image: "https://images.unsplash.com/photo-1556821552-9f41b9d9d628?w=600&h=800&fit=crop" },
-                    { name: "Púrpura", hex: "#8338ec", image: "https://images.unsplash.com/photo-1543163521-9efcc06b9ebb?w=600&h=800&fit=crop" }
+                    { name: "Negro", hex: "#0f0f1e", image: "images/sudadera-negra-subsonic.png" },
+                    { name: "Gris Oscuro", hex: "#4a4a4a", image: "images/sudadera-grisoscuro-subsonic.png" },
+                    { name: "Púrpura", hex: "#8338ec", image: "images/sudadera-morado-subsonic.png" }
                 ],
                 hasSize: true
             },
@@ -161,8 +153,8 @@
                 description: "Comodidad total con diseño moderno",
                 price: "$39.99",
                 colors: [
-                    { name: "Negro", hex: "#0f0f1e", image: "https://images.unsplash.com/photo-1506440773649-6e0eb8cfb237?w=600&h=800&fit=crop" },
-                    { name: "Gris", hex: "#1a1a3e", image: "https://images.unsplash.com/photo-1473127895723-a97c89f8254c?w=600&h=800&fit=crop" }
+                    { name: "Negro", hex: "#0f0f1e", image: "images/pantalon-negro-subsonic.png" },
+                    { name: "Gris", hex: "#808080", image: "images/pantalon-gris-subsonic.png" }
                 ],
                 hasSize: true
             },
@@ -258,12 +250,12 @@
             document.getElementById('productImage').src = product.colors[0].image;
 
             // Mostrar opciones de color
-            const colorSelector = document.getElementById('colorSelector');
             const colorOptions = document.getElementById('colorOptions');
             
             product.colors.forEach((color, index) => {
                 const colorBtn = document.createElement('button');
                 colorBtn.className = 'color-btn' + (index === 0 ? ' active' : '');
+                colorBtn.type = 'button';
                 colorBtn.style.backgroundColor = color.hex;
                 colorBtn.title = color.name;
                 colorBtn.onclick = () => {
@@ -271,13 +263,7 @@
                     colorBtn.classList.add('active');
                     document.getElementById('productImage').src = color.image;
                 };
-                colorSelector.appendChild(colorBtn);
-
-                const colorPreview = document.createElement('div');
-                colorPreview.className = 'color-preview';
-                colorPreview.style.backgroundColor = color.hex;
-                colorPreview.innerHTML = `<span>${color.name}</span>`;
-                colorOptions.appendChild(colorPreview);
+                colorOptions.appendChild(colorBtn);
             });
 
             // Mostrar tallas solo para ropa

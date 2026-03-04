@@ -1647,6 +1647,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .merch-card:hover {
@@ -1688,6 +1689,9 @@ body {
 
 .merch-body {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .merch-body h3 {
@@ -1705,6 +1709,7 @@ body {
 .merch-colors {
     display: flex;
     gap: 0.5rem;
+    margin-top: auto;
     margin-bottom: 1rem;
 }
 
@@ -1726,7 +1731,7 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .merch-limited {
@@ -2266,21 +2271,9 @@ body {
 }
 
 .color-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.color-preview {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    border-radius: 8px;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
 .product-info h1 {
