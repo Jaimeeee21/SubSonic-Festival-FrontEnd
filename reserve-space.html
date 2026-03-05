@@ -1,349 +1,285 @@
 <!DOCTYPE html>
 <html lang="es">
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservar Espacio - SUBSONIC</title>
     <link rel="stylesheet" href="style.css">
-</head>
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-+
-<body>
-    <nav class="navbar">
-+        <div class="navbar-container">
-+            <a href="index-business.html" class="navbar-logo">
-+                <span class="logo-icon">🎵</span>
-+                <span class="logo-text">SUBSONIC</span>
-+            </a>
-+            <div style="display:flex;align-items:center;gap:12px;">
-+                <a href="index-business.html" class="nav-link" style="color:var(--light-text);">Panel</a>
-+            </div>
-+        </div>
-+    </nav>
-+
-+    <section class="container" style="padding:90px 20px 40px;">
-+        <h1>Reservar Espacio para tu Negocio</h1>
-+        <p class="section-subtitle">Rellena el formulario para solicitar un puesto en el festival.</p>
-+
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar Espacio - SUBSONIC</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index-business.html" class="navbar-logo">
+            <a href="index.html" class="navbar-logo">
                 <span class="logo-icon">🎵</span>
                 <span class="logo-text">SUBSONIC</span>
             </a>
-            <div style="display:flex;align-items:center;gap:12px;">
-                <a href="index-business.html" class="nav-link" style="color:var(--light-text);">Panel</a>
+            <!-- Zona de empresa: nombre -->
+            <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
+                <div style="color:var(--light-text);font-weight:600;">
+                    Empresa: <span style="color:#00d4ff;">TuEmpresa S.L.</span>
+                </div>
             </div>
         </div>
     </nav>
 
     <section class="container" style="padding:90px 20px 40px;">
         <h1>Reservar Espacio para tu Negocio</h1>
-        <p class="section-subtitle">Rellena el formulario para solicitar un puesto en el festival.</p>
+        <p class="section-subtitle">Selecciona un evento y elige tu espacio</p>
 
-        <div style="max-width:900px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);margin-top:18px;">
-            <form id="reserveForm">
-                <div class="form-group">
-                    <label for="spaceType">Tipo de Espacio</label>
-                    <select id="spaceType" required>
-                        <option value="">Selecciona...</option>
-                        <option value="food-truck">Food Truck (3x6m)</option>
-                        <option value="stall">Puesto (2x2m)</option>
-                        <option value="booth">Stand Premium (4x4m)</option>
-                    </select>
+        <!-- PASO 1: Seleccionar Evento -->
+        <div id="eventsSection" style="display:block;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+                <h2 style="margin:0;color:#333;">Paso 1: Selecciona un Evento</h2>
+                <a href="index-business.html" class="link-blue" style="font-size:0.95rem;">Volver al Panel →</a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:18px;margin-bottom:36px;">
+                <!-- Evento: Party House Festival -->
+                <div class="event-card" onclick="selectEvent('party-house', 'Party House Festival')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
+                    <h3 style="margin:0 0 12px 0;color:#6b21a8;">🎉 Party House Festival</h3>
+                    <p style="margin:0;color:#666;font-size:0.95rem;">15 - 16 de Agosto 2026</p>
+                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 2 días completos</p>
+                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Música electrónica y eventos sociales</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="requestedDays">Días solicitados</label>
-                    <select id="requestedDays" required>
-                        <option value="">Selecciona...</option>
-                        <option value="1">1 Día</option>
-                        <option value="2">2 Días</option>
-                        <option value="3">3 Días</option>
-                    </select>
+                <!-- Evento: Music & Art Fest -->
+                <div class="event-card" onclick="selectEvent('music-art', 'Music & Art Fest')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
+                    <h3 style="margin:0 0 12px 0;color:#00d4ff;">🎨 Music & Art Fest</h3>
+                    <p style="margin:0;color:#666;font-size:0.95rem;">16 - 17 de Agosto 2026</p>
+                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 2 días completos</p>
+                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Música, arte, instalaciones y exposiciones</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="notes">Notas / Requerimientos</label>
-                    <textarea id="notes" rows="4" placeholder="Necesidades eléctricas, preferencia de ubicación..."></textarea>
+                <!-- Evento: Underground Rave -->
+                <div class="event-card" onclick="selectEvent('underground', 'Underground Rave')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
+                    <h3 style="margin:0 0 12px 0;color:#ff006e;">🎧 Underground Rave</h3>
+                    <p style="margin:0;color:#666;font-size:0.95rem;">17 de Agosto 2026</p>
+                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 1 día completo</p>
+                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Techno, house y experimental</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 2: Seleccionar Puesto -->
+        <div id="spacesSection" style="display:none;">
+            <div style="margin-bottom:24px;">
+                <button onclick="backToEvents()" style="background:none;border:none;color:#00d4ff;font-weight:600;cursor:pointer;font-size:1rem;">← Volver a eventos</button>
+                <h2 style="margin:12px 0 0 0;color:#333;">Paso 2: Selecciona tu Espacio para <span id="selectedEventName" style="color:#00d4ff;"></span></h2>
+            </div>
+            
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:18px;margin-bottom:36px;">
+                <!-- Food Truck -->
+                <div class="space-card" onclick="selectSpace('food-truck', 'Food Truck (3m × 6m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #6b21a8;cursor:pointer;transition:all 0.3s ease;">
+                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                        <h3 style="margin:0;color:#6b21a8;">🚚 Food Truck</h3>
+                        <span style="background:#10b981;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">✓ Disponible</span>
+                    </div>
+                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">3m × 6m</p>
+                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 3 de 5</p>
+                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
+                        <li style="padding:6px 0;">✓ Espacio para venta de comida</li>
+                        <li style="padding:6px 0;">✓ Acceso a servicios</li>
+                        <li style="padding:6px 0;">✓ Conexión eléctrica</li>
+                    </ul>
+                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Ideal para food trucks y comedores</p>
                 </div>
 
-                <div style="display:flex;gap:12px;align-items:center;">
-                    <button type="submit" class="btn-primary">Enviar Solicitud</button>
-                    <a href="business-register.html" class="link-blue">Volver al registro de empresa</a>
+                <!-- Puesto Estándar -->
+                <div class="space-card" onclick="selectSpace('stall', 'Puesto Estándar (2m × 2m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #00d4ff;cursor:pointer;transition:all 0.3s ease;">
+                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                        <h3 style="margin:0;color:#00d4ff;">📦 Puesto Estándar</h3>
+                        <span style="background:#f59e0b;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">⚠ Pocas quedan</span>
+                    </div>
+                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">2m × 2m</p>
+                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 1 de 10</p>
+                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
+                        <li style="padding:6px 0;">✓ Espacio compacto</li>
+                        <li style="padding:6px 0;">✓ Ideal para merchandising</li>
+                        <li style="padding:6px 0;">✓ Ubicación central</li>
+                    </ul>
+                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Perfecto para pequeños negocios</p>
                 </div>
-            </form>
+
+                <!-- Stand Premium -->
+                <div class="space-card" onclick="selectSpace('booth', 'Stand Premium (4m × 4m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #ff006e;cursor:pointer;transition:all 0.3s ease;opacity:0.6;">
+                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
+                        <h3 style="margin:0;color:#ff006e;">⭐ Stand Premium</h3>
+                        <span style="background:#ef4444;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">✗ Agotado</span>
+                    </div>
+                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">4m × 4m</p>
+                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 0 de 4</p>
+                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
+                        <li style="padding:6px 0;">✓ Mayor visibilidad</li>
+                        <li style="padding:6px 0;">✓ Servicios premium</li>
+                        <li style="padding:6px 0;">✓ Mejor ubicación</li>
+                    </ul>
+                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Para empresas con mayor demanda</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3: Formulario de Solicitud -->
+        <div id="formSection" style="display:none;">
+            <div style="margin-bottom:24px;">
+                <button onclick="backToSpaces()" style="background:none;border:none;color:#00d4ff;font-weight:600;cursor:pointer;font-size:1rem;">← Volver a puestos</button>
+                <h2 style="margin:12px 0 0 0;color:#333;">Paso 3: Completa tu Solicitud</h2>
+                <p style="color:#666;font-size:0.95rem;margin-top:8px;">Evento: <span id="selectedEventDisplay" style="font-weight:600;color:#00d4ff;"></span> | Espacio: <span id="selectedSpaceDisplay" style="font-weight:600;color:#00d4ff;"></span></p>
+            </div>
+
+            <div style="max-width:900px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);">
+                <div style="background:#f0f9ff;border-left:4px solid #00d4ff;padding:16px;border-radius:8px;margin-bottom:18px;">
+                    <p style="margin:0;color:#0369a1;font-weight:600;font-size:0.95rem;">ℹ️ Tu reserva incluye todos los días del evento seleccionado</p>
+                    <p style="margin:6px 0 0 0;color:#0c4a6e;font-size:0.9rem;" id="eventDurationInfo"></p>
+                </div>
+                
+                <form id="reserveForm">
+                    <div class="form-group">
+                        <label for="notes">Notas / Requerimientos Especiales</label>
+                        <textarea id="notes" rows="4" placeholder="Necesidades eléctricas, preferencia de ubicación, características técnicas..."></textarea>
+                    </div>
+
+                    <div style="display:flex;gap:12px;align-items:center;">
+                        <button type="submit" class="btn-primary">Enviar Solicitud</button>
+                        <a href="index-business.html" class="link-blue">Volver al Panel de Empresa</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
     <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
 
+    <div style="flex:1;"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SUBSONIC Festival</h4>
+                    <p>La mejor experiencia musical del año</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#lineup">Lineup</a></li>
+                        <li><a href="index.html#info">Información</a></li>
+                        <li><a href="index.html#entradas">Entradas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="X"><span class="social-icon-x-wrapper"><svg class="social-icon-x" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.6l-5.165-6.75-5.913 6.75h-3.308l7.73-8.835L.424 2.25h6.76l4.673 6.169L17.671 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SUBSONIC Festival. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
+        const eventDetails = {
+            'party-house': {
+                name: 'Party House Festival',
+                duration: '15 - 16 de Agosto (2 días completos)'
+            },
+            'music-art': {
+                name: 'Music & Art Fest',
+                duration: '16 - 17 de Agosto (2 días completos)'
+            },
+            'underground': {
+                name: 'Underground Rave',
+                duration: '17 de Agosto (1 día completo)'
+            }
+        };
+
+        let selectedEvent = '';
+        let selectedEventName = '';
+        let selectedSpace = '';
+        let selectedSpaceName = '';
+
+        function selectEvent(eventId, eventName) {
+            selectedEvent = eventId;
+            selectedEventName = eventName;
+            document.getElementById('selectedEventName').textContent = eventName;
+            document.getElementById('selectedEventDisplay').textContent = eventName;
+            document.getElementById('eventDurationInfo').textContent = 'Duración: ' + eventDetails[eventId].duration;
+            
+            // Efecto visual en tarjetas de evento
+            document.querySelectorAll('.event-card').forEach(card => {
+                card.style.borderColor = 'transparent';
+                card.style.backgroundColor = '#fff';
+            });
+            event.target.closest('.event-card').style.borderColor = '#00d4ff';
+            event.target.closest('.event-card').style.backgroundColor = '#f0f9ff';
+            
+            // Mostrar sección de puestos
+            document.getElementById('eventsSection').style.display = 'none';
+            document.getElementById('spacesSection').style.display = 'block';
+            document.getElementById('formSection').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function selectSpace(spaceId, spaceName) {
+            // No permitir seleccionar Stand Premium (agotado)
+            if (spaceId === 'booth') {
+                alert('Lo sentimos, este espacio está agotado.');
+                return;
+            }
+            
+            selectedSpace = spaceId;
+            selectedSpaceName = spaceName;
+            document.getElementById('selectedSpaceDisplay').textContent = spaceName;
+            
+            // Efecto visual en tarjetas de espacio
+            document.querySelectorAll('.space-card').forEach(card => {
+                card.style.borderColor = card.style.borderColor.split(' ')[0];
+                card.style.backgroundColor = '#fff';
+            });
+            event.target.closest('.space-card').style.borderColor = '#00d4ff';
+            event.target.closest('.space-card').style.backgroundColor = '#f0f9ff';
+            
+            // Mostrar formulario
+            document.getElementById('eventsSection').style.display = 'none';
+            document.getElementById('spacesSection').style.display = 'none';
+            document.getElementById('formSection').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function backToEvents() {
+            selectedEvent = '';
+            selectedEventName = '';
+            selectedSpace = '';
+            selectedSpaceName = '';
+            document.getElementById('eventsSection').style.display = 'block';
+            document.getElementById('spacesSection').style.display = 'none';
+            document.getElementById('formSection').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function backToSpaces() {
+            selectedSpace = '';
+            selectedSpaceName = '';
+            document.getElementById('eventsSection').style.display = 'none';
+            document.getElementById('spacesSection').style.display = 'block';
+            document.getElementById('formSection').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
         const reserveForm = document.getElementById('reserveForm');
         if (reserveForm) {
             reserveForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const type = document.getElementById('spaceType').value;
-                const days = document.getElementById('requestedDays').value;
-                if (!type || !days) {
-                    alert('Completa los campos requeridos');
-                    return;
-                }
                 // Simular envío
-                alert('Solicitud enviada. Te contactaremos pronto.');
+                alert('Solicitud enviada para ' + selectedEventName + ' (' + eventDetails[selectedEvent].duration + ')\nEspacio: ' + selectedSpaceName + '\nTe contactaremos pronto.');
                 reserveForm.reset();
+                backToEvents();
             });
         }
     </script>
