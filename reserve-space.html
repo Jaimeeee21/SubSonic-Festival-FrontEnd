@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Espacio - SUBSONIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+<body>
+    <nav class="navbar">
++        <div class="navbar-container">
++            <a href="index-business.html" class="navbar-logo">
++                <span class="logo-icon">🎵</span>
++                <span class="logo-text">SUBSONIC</span>
++            </a>
++            <div style="display:flex;align-items:center;gap:12px;">
++                <a href="index-business.html" class="nav-link" style="color:var(--light-text);">Panel</a>
++            </div>
++        </div>
++    </nav>
++
++    <section class="container" style="padding:90px 20px 40px;">
++        <h1>Reservar Espacio para tu Negocio</h1>
++        <p class="section-subtitle">Rellena el formulario para solicitar un puesto en el festival.</p>
++
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Espacio - SUBSONIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index-business.html" class="navbar-logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">SUBSONIC</span>
+            </a>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="index-business.html" class="nav-link" style="color:var(--light-text);">Panel</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container" style="padding:90px 20px 40px;">
+        <h1>Reservar Espacio para tu Negocio</h1>
+        <p class="section-subtitle">Rellena el formulario para solicitar un puesto en el festival.</p>
+
+        <div style="max-width:900px;background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.06);margin-top:18px;">
+            <form id="reserveForm">
+                <div class="form-group">
+                    <label for="spaceType">Tipo de Espacio</label>
+                    <select id="spaceType" required>
+                        <option value="">Selecciona...</option>
+                        <option value="food-truck">Food Truck (3x6m)</option>
+                        <option value="stall">Puesto (2x2m)</option>
+                        <option value="booth">Stand Premium (4x4m)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestedDays">Días solicitados</label>
+                    <select id="requestedDays" required>
+                        <option value="">Selecciona...</option>
+                        <option value="1">1 Día</option>
+                        <option value="2">2 Días</option>
+                        <option value="3">3 Días</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notas / Requerimientos</label>
+                    <textarea id="notes" rows="4" placeholder="Necesidades eléctricas, preferencia de ubicación..."></textarea>
+                </div>
+
+                <div style="display:flex;gap:12px;align-items:center;">
+                    <button type="submit" class="btn-primary">Enviar Solicitud</button>
+                    <a href="business-register.html" class="link-blue">Volver al registro de empresa</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
+
+    <script>
+        const reserveForm = document.getElementById('reserveForm');
+        if (reserveForm) {
+            reserveForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const type = document.getElementById('spaceType').value;
+                const days = document.getElementById('requestedDays').value;
+                if (!type || !days) {
+                    alert('Completa los campos requeridos');
+                    return;
+                }
+                // Simular envío
+                alert('Solicitud enviada. Te contactaremos pronto.');
+                reserveForm.reset();
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
