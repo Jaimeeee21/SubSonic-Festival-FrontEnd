@@ -1327,6 +1327,12 @@ body {
     transition: var(--transition);
 }
 
+/* Botones dentro de contenedores flexibles */
+div[style*="display:flex"] .btn-primary {
+    flex: 1;
+    width: auto;
+}
+
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(107, 33, 168, 0.4);
