@@ -34,31 +34,7 @@
                 <h2 style="margin:0;color:#333;">Paso 1: Selecciona un Evento</h2>
                 <a href="index-business.html" class="link-blue" style="font-size:0.95rem;">Volver al Panel →</a>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:18px;margin-bottom:36px;">
-                <!-- Evento: Party House Festival -->
-                <div class="event-card" onclick="selectEvent('party-house', 'Party House Festival')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
-                    <h3 style="margin:0 0 12px 0;color:#6b21a8;">🎉 Party House Festival</h3>
-                    <p style="margin:0;color:#666;font-size:0.95rem;">15 - 16 de Agosto 2026</p>
-                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 2 días completos</p>
-                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Música electrónica y eventos sociales</p>
-                </div>
-
-                <!-- Evento: Music & Art Fest -->
-                <div class="event-card" onclick="selectEvent('music-art', 'Music & Art Fest')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
-                    <h3 style="margin:0 0 12px 0;color:#00d4ff;">🎨 Music & Art Fest</h3>
-                    <p style="margin:0;color:#666;font-size:0.95rem;">16 - 17 de Agosto 2026</p>
-                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 2 días completos</p>
-                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Música, arte, instalaciones y exposiciones</p>
-                </div>
-
-                <!-- Evento: Underground Rave -->
-                <div class="event-card" onclick="selectEvent('underground', 'Underground Rave')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border:2px solid transparent;cursor:pointer;transition:all 0.3s ease;">
-                    <h3 style="margin:0 0 12px 0;color:#ff006e;">🎧 Underground Rave</h3>
-                    <p style="margin:0;color:#666;font-size:0.95rem;">17 de Agosto 2026</p>
-                    <p style="margin:8px 0 0 0;color:#888;font-size:0.85rem;">✓ 1 día completo</p>
-                    <p style="margin:12px 0 0 0;color:#888;font-size:0.85rem;">Techno, house y experimental</p>
-                </div>
-            </div>
+            <div id="eventsGrid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:18px;margin-bottom:36px;"></div>
         </div>
 
         <!-- PASO 2: Seleccionar Puesto -->
@@ -68,55 +44,7 @@
                 <h2 style="margin:12px 0 0 0;color:#333;">Paso 2: Selecciona tu Espacio para <span id="selectedEventName" style="color:#00d4ff;"></span></h2>
             </div>
             
-            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:18px;margin-bottom:36px;">
-                <!-- Food Truck -->
-                <div class="space-card" onclick="selectSpace('food-truck', 'Food Truck (3m × 6m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #6b21a8;cursor:pointer;transition:all 0.3s ease;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
-                        <h3 style="margin:0;color:#6b21a8;">🚚 Food Truck</h3>
-                        <span style="background:#10b981;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">✓ Disponible</span>
-                    </div>
-                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">3m × 6m</p>
-                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 3 de 5</p>
-                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
-                        <li style="padding:6px 0;">✓ Espacio para venta de comida</li>
-                        <li style="padding:6px 0;">✓ Acceso a servicios</li>
-                        <li style="padding:6px 0;">✓ Conexión eléctrica</li>
-                    </ul>
-                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Ideal para food trucks y comedores</p>
-                </div>
-
-                <!-- Puesto Estándar -->
-                <div class="space-card" onclick="selectSpace('stall', 'Puesto Estándar (2m × 2m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #00d4ff;cursor:pointer;transition:all 0.3s ease;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
-                        <h3 style="margin:0;color:#00d4ff;">📦 Puesto Estándar</h3>
-                        <span style="background:#f59e0b;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">⚠ Pocas quedan</span>
-                    </div>
-                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">2m × 2m</p>
-                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 1 de 10</p>
-                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
-                        <li style="padding:6px 0;">✓ Espacio compacto</li>
-                        <li style="padding:6px 0;">✓ Ideal para merchandising</li>
-                        <li style="padding:6px 0;">✓ Ubicación central</li>
-                    </ul>
-                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Perfecto para pequeños negocios</p>
-                </div>
-
-                <!-- Stand Premium -->
-                <div class="space-card" onclick="selectSpace('booth', 'Stand Premium (4m × 4m)')" style="background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.06);border-left:4px solid #ff006e;cursor:pointer;transition:all 0.3s ease;opacity:0.6;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:12px;">
-                        <h3 style="margin:0;color:#ff006e;">⭐ Stand Premium</h3>
-                        <span style="background:#ef4444;color:white;padding:4px 12px;border-radius:16px;font-size:0.8rem;font-weight:600;">✗ Agotado</span>
-                    </div>
-                    <p style="font-size:1.2rem;font-weight:600;color:#333;margin:10px 0;">4m × 4m</p>
-                    <p style="font-size:0.9rem;color:#666;margin:8px 0;"><strong>Espacios disponibles:</strong> 0 de 4</p>
-                    <ul style="list-style:none;padding:0;margin:12px 0;color:#666;font-size:0.95rem;">
-                        <li style="padding:6px 0;">✓ Mayor visibilidad</li>
-                        <li style="padding:6px 0;">✓ Servicios premium</li>
-                        <li style="padding:6px 0;">✓ Mejor ubicación</li>
-                    </ul>
-                    <p style="font-size:0.9rem;color:#888;margin-bottom:0;">Para empresas con mayor demanda</p>
-                </div>
-            </div>
+            <div id="spacesGrid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:18px;margin-bottom:36px;"></div>
         </div>
 
         <!-- PASO 3: Formulario de Solicitud -->
@@ -183,106 +111,8 @@
         </div>
     </footer>
 
-    <script>
-        const eventDetails = {
-            'party-house': {
-                name: 'Party House Festival',
-                duration: '15 - 16 de Agosto (2 días completos)'
-            },
-            'music-art': {
-                name: 'Music & Art Fest',
-                duration: '16 - 17 de Agosto (2 días completos)'
-            },
-            'underground': {
-                name: 'Underground Rave',
-                duration: '17 de Agosto (1 día completo)'
-            }
-        };
-
-        let selectedEvent = '';
-        let selectedEventName = '';
-        let selectedSpace = '';
-        let selectedSpaceName = '';
-
-        function selectEvent(eventId, eventName) {
-            selectedEvent = eventId;
-            selectedEventName = eventName;
-            document.getElementById('selectedEventName').textContent = eventName;
-            document.getElementById('selectedEventDisplay').textContent = eventName;
-            document.getElementById('eventDurationInfo').textContent = 'Duración: ' + eventDetails[eventId].duration;
-            
-            // Efecto visual en tarjetas de evento
-            document.querySelectorAll('.event-card').forEach(card => {
-                card.style.borderColor = 'transparent';
-                card.style.backgroundColor = '#fff';
-            });
-            event.target.closest('.event-card').style.borderColor = '#00d4ff';
-            event.target.closest('.event-card').style.backgroundColor = '#f0f9ff';
-            
-            // Mostrar sección de puestos
-            document.getElementById('eventsSection').style.display = 'none';
-            document.getElementById('spacesSection').style.display = 'block';
-            document.getElementById('formSection').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        function selectSpace(spaceId, spaceName) {
-            // No permitir seleccionar Stand Premium (agotado)
-            if (spaceId === 'booth') {
-                alert('Lo sentimos, este espacio está agotado.');
-                return;
-            }
-            
-            selectedSpace = spaceId;
-            selectedSpaceName = spaceName;
-            document.getElementById('selectedSpaceDisplay').textContent = spaceName;
-            
-            // Efecto visual en tarjetas de espacio
-            document.querySelectorAll('.space-card').forEach(card => {
-                card.style.borderColor = card.style.borderColor.split(' ')[0];
-                card.style.backgroundColor = '#fff';
-            });
-            event.target.closest('.space-card').style.borderColor = '#00d4ff';
-            event.target.closest('.space-card').style.backgroundColor = '#f0f9ff';
-            
-            // Mostrar formulario
-            document.getElementById('eventsSection').style.display = 'none';
-            document.getElementById('spacesSection').style.display = 'none';
-            document.getElementById('formSection').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function backToEvents() {
-            selectedEvent = '';
-            selectedEventName = '';
-            selectedSpace = '';
-            selectedSpaceName = '';
-            document.getElementById('eventsSection').style.display = 'block';
-            document.getElementById('spacesSection').style.display = 'none';
-            document.getElementById('formSection').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        function backToSpaces() {
-            selectedSpace = '';
-            selectedSpaceName = '';
-            document.getElementById('eventsSection').style.display = 'none';
-            document.getElementById('spacesSection').style.display = 'block';
-            document.getElementById('formSection').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        const reserveForm = document.getElementById('reserveForm');
-        if (reserveForm) {
-            reserveForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Simular envío
-                alert('Solicitud enviada para ' + selectedEventName + ' (' + eventDetails[selectedEvent].duration + ')\nEspacio: ' + selectedSpaceName + '\nTe contactaremos pronto.');
-                reserveForm.reset();
-                backToEvents();
-            });
-        }
-    </script>
+    <script src="reserve-space-data.js"></script>
+    <script src="reserve-space-view.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

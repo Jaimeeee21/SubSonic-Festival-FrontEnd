@@ -21,13 +21,7 @@
                 <li class="nav-item"><a href="merch.html" class="nav-link">Merch</a></li>
             </ul>
 
-            <!-- Zona de empresa: nombre y botón para reservar espacio -->
-            <div style="display:flex;align-items:center;gap:12px;margin-left:auto;">
-                <div style="color:var(--light-text);font-weight:600;">
-                    Empresa: <span style="color:#00d4ff;">TuEmpresa S.L.</span>
-                </div>
-                <a href="reserve-space.html" class="btn-primary" style="padding:8px 14px;text-decoration:none;">Reservar Espacio</a>
-            </div>
+            <div id="businessNavbarInfo" style="display:flex;align-items:center;gap:12px;margin-left:auto;"></div>
 
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -42,10 +36,7 @@
     <section class="hero" style="min-height:40vh;display:flex;align-items:center;justify-content:center;">
         <div class="container" style="text-align:center;color:var(--light-text);">
 
-            <h1 style="font-size:2.2rem;margin-bottom:6px;">Panel de Empresa</h1>
-
-            <p style="opacity:0.9;margin-bottom:18px;">Vista pública de la web con opciones especiales para cuentas empresariales.</p>
-            <a href="reserve-space.html" class="btn-primary" style="padding:12px 20px;font-size:1rem;">Reservar un espacio ahora</a>
+            <div id="businessHeroContent"></div>
 
         </div>
 
@@ -55,19 +46,7 @@
 
     <!-- Contenido principal: resumen rápido de la empresa y opciones -->
     <section class="container" style="padding:40px 20px;">
-        <div style="display:flex;gap:24px;flex-wrap:wrap;">
-            <div style="flex:1;min-width:260px;background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,0.06);">
-                <h3>Información de la Empresa</h3>
-                <p><strong>Nombre:</strong> TuEmpresa S.L.</p>
-                <p><strong>Tipo:</strong> Food Tracking</p>
-                <p style="margin-top:10px;">Desde aquí puedes gestionar tus reservas, ver el estado de tu solicitud y editar tu perfil.</p>
-            </div>
-
-            <div style="flex:2;min-width:320px;background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,0.06);">
-                <h3>Reservas Recientes</h3>
-                <p>No hay reservas activas. Usa el botón "Reservar Espacio" para solicitar un puesto en el festival.</p>
-            </div>
-        </div>
+        <div id="businessSummaryCards" style="display:flex;gap:24px;flex-wrap:wrap;"></div>
     </section>
 
     
@@ -106,7 +85,8 @@
         </div>
     </footer>
 
+    <script src="index-business-data.js"></script>
+    <script src="index-business-view.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-+

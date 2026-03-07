@@ -64,44 +64,7 @@
                 <p class="calendar-subtitle">El festival se realiza en múltiples ciudades. Elige la que te interesa:</p>
                 
                 <div class="events-timeline">
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">14-17</span>
-                            <span class="month">AGO</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC Madrid 2026</h3>
-                            <p class="event-location">📍 Parque Central, Madrid</p>
-                            <p class="event-description">La experiencia musical más electrizante del año • 50,000+ Asistentes • 4 Escenarios</p>
-                            <button class="btn-primary" onclick="window.location.href='#'">🎟️ Comprar Entradas</button>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">21-24</span>
-                            <span class="month">AGO</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC Barcelona 2026</h3>
-                            <p class="event-location">📍 Montjuïc, Barcelona</p>
-                            <p class="event-description">Segunda fase del festival • 45,000+ Asistentes • Lineup exclusivo</p>
-                            <button class="btn-primary" onclick="window.location.href='#'">🎟️ Comprar Entradas</button>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">28-31</span>
-                            <span class="month">AGO</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC Valencia 2026</h3>
-                            <p class="event-location">📍 Turia Park, Valencia</p>
-                            <p class="event-description">Tercera fase del festival • 40,000+ Asistentes • Artistas internacionales</p>
-                            <button class="btn-primary" onclick="window.location.href='#'">🎟️ Comprar Entradas</button>
-                        </div>
-                    </div>
+                    <div id="agostoTimeline"></div>
                 </div>
             </div>
 
@@ -109,31 +72,7 @@
             <div class="calendar-content" id="pasado">
                 <h2 class="calendar-month">Ediciones Anteriores</h2>
                 <div class="events-timeline">
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">Ago</span>
-                            <span class="month">2025</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC 2025</h3>
-                            <p class="event-location">📍 Madrid, España</p>
-                            <p class="event-description">Primera edición del festival con más de 50,000 asistentes</p>
-                            <button class="btn-gallery" onclick="window.location.href='#'">📸 Ver Galería de Fotos</button>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">Ago</span>
-                            <span class="month">2024</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC 2024</h3>
-                            <p class="event-location">📍 Barcelona, España</p>
-                            <p class="event-description">Festival piloto que inició la tradición SUBSONIC</p>
-                            <button class="btn-gallery" onclick="window.location.href='#'">📸 Ver Galería de Fotos</button>
-                        </div>
-                    </div>
+                    <div id="pasadoTimeline"></div>
                 </div>
             </div>
 
@@ -141,31 +80,7 @@
             <div class="calendar-content" id="proximas">
                 <h2 class="calendar-month">Próximos Festivales</h2>
                 <div class="events-timeline">
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">Ago</span>
-                            <span class="month">2027</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC 2027</h3>
-                            <p class="event-location">📍 Ubicación por confirmar</p>
-                            <p class="event-description">Próxima edición con más sorpresas y artistas internacionales</p>
-                            <button class="btn-primary" onclick="window.location.href='#'">🔔 Notificarme</button>
-                        </div>
-                    </div>
-
-                    <div class="timeline-event">
-                        <div class="event-date">
-                            <span class="day">Dic</span>
-                            <span class="month">2026</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>SUBSONIC WINTER 2026</h3>
-                            <p class="event-location">📍 Ubicación por confirmar</p>
-                            <p class="event-description">Edición especial de invierno con artistas emergentes</p>
-                            <button class="btn-primary" onclick="window.location.href='#'">🔔 Notificarme</button>
-                        </div>
-                    </div>
+                    <div id="proximasTimeline"></div>
                 </div>
             </div>
         </div>
@@ -174,6 +89,8 @@
     <!-- Botón Flotante de Contacto -->
     <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
 
+    <script src="calendario-data.js"></script>
+    <script src="calendario-view.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
