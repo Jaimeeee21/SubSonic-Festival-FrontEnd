@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navegación -->
     <nav class="navbar">
         <div class="navbar-container">
             <a href="index.html" class="navbar-logo">
@@ -21,7 +20,7 @@
                     <div class="dropdown-menu">
                         <a href="calendario.html#agosto" class="dropdown-item">Agosto 2026</a>
                         <a href="calendario.html#pasado" class="dropdown-item">Ediciones Anteriores</a>
-                        <a href="calendario.html#proximas" class="dropdown-item">Próximos Festivales</a>
+                        <a href="calendario.html#proximas" class="dropdown-item">Proximos Festivales</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -37,7 +36,7 @@
                     <div class="dropdown-menu">
                         <a href="merch.html#ropa" class="dropdown-item">Ropa</a>
                         <a href="merch.html#accesorios" class="dropdown-item">Accesorios</a>
-                        <a href="merch.html#edicion-limitada" class="dropdown-item">Edición Limitada</a>
+                        <a href="merch.html#edicion-limitada" class="dropdown-item">Edicion Limitada</a>
                     </div>
                 </li>
             </ul>
@@ -55,254 +54,33 @@
         </div>
     </nav>
 
-    <!-- Sección de Merchandising -->
     <section class="merch-section">
         <div class="container">
             <h1>SUBSONIC Merchandising</h1>
-            <p class="section-subtitle">Lleva el espíritu de SUBSONIC contigo</p>
+            <p class="section-subtitle">Lleva el espiritu de SUBSONIC contigo</p>
 
-            <!-- Ropa -->
             <div class="merch-content" id="ropa">
                 <h2 class="merch-category">Ropa Oficial</h2>
-                <div class="merch-grid">
-                    <div class="merch-card" data-product-id="1" onclick="window.location.href='product-detail.html?id=1'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/camiseta-blanca-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Camiseta SUBSONIC Classic</h3>
-                            <p class="merch-desc">Tela de 100% algodón con logo bordado</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Blanco" style="background-color: #ffffff; border: 1px solid #ccc;" title="Blanco"></span>
-                                <span class="color" data-color="Azul Neon" style="background-color: #00d4ff;" title="Azul Neon"></span>
-                            </div>
-                            <p class="merch-price">$29.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="2" onclick="window.location.href='product-detail.html?id=2'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/sudadera-negra-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Hoodie SUBSONIC</h3>
-                            <p class="merch-desc">Sudadera premium con capucha ajustable</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Gris Oscuro" style="background-color: #4a4a4a;" title="Gris Oscuro"></span>
-                                <span class="color" data-color="Púrpura" style="background-color: #8338ec;" title="Púrpura"></span>
-                            </div>
-                            <p class="merch-price">$49.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="3" onclick="window.location.href='product-detail.html?id=3'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/pantalon-negro-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Pantalones SUBSONIC Jogger</h3>
-                            <p class="merch-desc">Comodidad total con diseño moderno</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Gris" style="background-color: #808080;" title="Gris"></span>
-                            </div>
-                            <p class="merch-price">$39.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="4" onclick="window.location.href='product-detail.html?id=4'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/bomber-negra-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Chaqueta Bomber SUBSONIC</h3>
-                            <p class="merch-desc">Estilo urbano con detalles bordados</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Rosa" style="background-color: #ff006e;" title="Rosa"></span>
-                            </div>
-                            <p class="merch-price">$69.99</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="merch-grid" id="ropaGrid"></div>
             </div>
 
-            <!-- Accesorios -->
             <div class="merch-content" id="accesorios">
                 <h2 class="merch-category">Accesorios</h2>
-                <div class="merch-grid">
-                    <div class="merch-card" data-product-id="5" onclick="window.location.href='product-detail.html?id=5'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/gorra-negra-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Gorra SUBSONIC Trucker</h3>
-                            <p class="merch-desc">Gorra ajustable con malla trasera</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Azul" style="background-color: #00d4ff;" title="Azul"></span>
-                            </div>
-                            <p class="merch-price">$19.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="6" onclick="window.location.href='product-detail.html?id=6'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/mochila-negro-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Mochila SUBSONIC Urban</h3>
-                            <p class="merch-desc">Compartimentos múltiples y resistente</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Gris" style="background-color: #666666;" title="Gris"></span>
-                            </div>
-                            <p class="merch-price">$44.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="7" onclick="window.location.href='product-detail.html?id=7'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/botella-negra-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Botella SUBSONIC Hydro</h3>
-                            <p class="merch-desc">Térmica deportiva con logo grabado</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Negro" style="background-color: #0f0f1e;" title="Negro"></span>
-                                <span class="color" data-color="Plateado" style="background-color: #c0c0c0;" title="Plateado"></span>
-                            </div>
-                            <p class="merch-price">$24.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card" data-product-id="8" onclick="window.location.href='product-detail.html?id=8'" style="cursor: pointer;">
-                        <div class="merch-image" style="background-image: url('images/pulsera-azulneon-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Pulsera SUBSONIC LED</h3>
-                            <p class="merch-desc">Pulsera LED interactiva para festivales</p>
-                            <div class="merch-colors">
-                                <span class="color" data-color="Azul Neon" style="background-color: #00d4ff;" title="Azul Neon"></span>
-                                <span class="color" data-color="Rosa Neon" style="background-color: #ff006e;" title="Rosa Neon"></span>
-                            </div>
-                            <p class="merch-price">$14.99</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="merch-grid" id="accesoriosGrid"></div>
             </div>
 
-            <!-- Edición Limitada -->
             <div class="merch-content" id="edicion-limitada">
-                <h2 class="merch-category">Edición Limitada</h2>
+                <h2 class="merch-category">Edicion Limitada</h2>
                 <p class="limited-notice">⚡ Solo disponible en cantidad limitada - Recuerda tus momentos SUBSONIC</p>
-                <div class="merch-grid">
-                    <div class="merch-card premium" data-product-id="9" onclick="window.location.href='product-detail.html?id=9'" style="cursor: pointer;">
-                        <div class="limited-badge">LIMITADA</div>
-                        <div class="merch-image" style="background-image: url('images/vinilo-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Vinilo SUBSONIC 2026</h3>
-                            <p class="merch-desc">Vinilo de edición limitada numerado con carátula de lujo</p>
-                            <p class="merch-limited">Solo quedan: <strong>15 unidades</strong></p>
-                            <p class="merch-price">$59.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card premium" data-product-id="10" onclick="window.location.href='product-detail.html?id=10'" style="cursor: pointer;">
-                        <div class="limited-badge">LIMITADA</div>
-                        <div class="merch-image" style="background-image: url('images/pasevip-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Pase VIP Metalizado</h3>
-                            <p class="merch-desc">Pase de coleccionista metalizado con cadena incluida</p>
-                            <p class="merch-limited">Solo quedan: <strong>8 unidades</strong></p>
-                            <p class="merch-price">$34.99</p>
-                        </div>
-                    </div>
-
-                    <div class="merch-card premium" data-product-id="11" onclick="window.location.href='product-detail.html?id=11'" style="cursor: pointer;">
-                        <div class="limited-badge">LIMITADA</div>
-                        <div class="merch-image" style="background-image: url('images/boxset-subsonic.png');"></div>
-                        <div class="merch-body">
-                            <h3>Edición Especial Box Set</h3>
-                            <p class="merch-desc">Colección premium con camiseta, vinilo y accesorios exclusivos</p>
-                            <p class="merch-limited">Solo quedan: <strong>5 unidades</strong></p>
-                            <p class="merch-price">$129.99</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="merch-grid" id="edicion-limitadaGrid"></div>
             </div>
         </div>
     </section>
 
-    <!-- Botón Flotante de Contacto -->
     <a href="faq.html" class="floating-contact-btn" title="Preguntas Frecuentes">?</a>
 
+    <script src="merch-data.js"></script>
+    <script src="merch.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Datos de productos con imágenes por color
-        const productColors = {
-            1: { // Camiseta
-                Negro: "images/camiseta-negra-subsonic.png",
-                Blanco: "images/camiseta-blanca-subsonic.png",
-                "Azul Neon": "images/camiseta-azul-subsonic.png"
-            },
-            2: { // Hoodie
-                Negro: "images/sudadera-negra-subsonic.png",
-                "Gris Oscuro": "images/sudadera-grisoscuro-subsonic.png",
-                Púrpura: "images/sudadera-morado-subsonic.png"
-            },
-            3: { // Pantalones
-                Negro: "images/pantalon-negro-subsonic.png",
-                Gris: "images/pantalon-gris-subsonic.png"
-            },
-            4: { // Chaqueta Bomber
-                Negro: "images/bomber-negra-subsonic.png",
-                Rosa: "images/bomber-rosa-subsonic.png"
-            },
-            5: { // Gorra
-                Negro: "images/gorra-negra-subsonic.png",
-                Azul: "images/gorra-azul-subsonic.png"
-            },
-            6: { // Mochila
-                Negro: "images/mochila-negro-subsonic.png",
-                Gris: "images/mochila-gris-subsonic.png"
-            },
-            7: { // Botella
-                Negro: "images/botella-negra-subsonic.png",
-                Plateado: "images/botella-gris-subsonic.png"
-            },
-            8: { // Pulsera LED
-                "Azul Neon": "images/pulsera-azulneon-subsonic.png",
-                "Rosa Neon": "images/pulsera-rosaneon-subsonic.png"
-            },
-            9: { // Vinilo
-                Negro: "images/vinilo-subsonic.png"
-            },
-            10: { // Pase VIP
-                Plateado: "images/pasevip-subsonic.png"
-            },
-            11: { // Box Set
-                Negro: "images/boxset-subsonic.png"
-            }
-        };
-
-        // Agregar event listeners a los color spans
-        document.querySelectorAll('.color').forEach(colorSpan => {
-            colorSpan.addEventListener('click', (e) => {
-                e.stopPropagation(); // Evitar que navegue al hacer click en color
-                
-                const productCard = colorSpan.closest('.merch-card');
-                const productId = productCard.dataset.productId;
-                const colorName = colorSpan.dataset.color;
-                const merchImage = productCard.querySelector('.merch-image');
-                
-                if (productColors[productId] && productColors[productId][colorName]) {
-                    merchImage.style.backgroundImage = `url('${productColors[productId][colorName]}')`;
-                }
-            });
-        });
-
-        // Funciones del carrito
-        function updateCartCount() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            document.getElementById('cartCount').textContent = cart.length;
-        }
-
-        // Actualizar contador cuando se carga la página
-        updateCartCount();
-
-        // Escuchar cambios en el storage (cuando se agrega desde product-detail.html)
-        window.addEventListener('storage', updateCartCount);
-
-        // También verificar cada segundo por si el storage cambió (en la misma ventana)
-        setInterval(updateCartCount, 500);
-    </script>
 </body>
 </html>
